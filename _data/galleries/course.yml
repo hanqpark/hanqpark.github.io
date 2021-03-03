@@ -1,0 +1,28 @@
+picture_path: course
+preview:
+  filename: kokoa
+  original: kokoa.png
+  sizes:
+    - kokoa.png
+  thumbnail: kokoa.png
+pictures:
+  - filename: kokoa
+    original: kokoa.png
+    sizes:
+      - kokoa.png
+    thumbnail: kokoa.png
+  - filename: python
+    original: python.png
+    sizes:
+      - python.png
+    thumbnail: python.png
+  - filename: js
+    original: js.png
+    sizes:
+      - js.png
+    thumbnail: js.png
+  - filename: js2
+    original: js2.png
+    sizes:
+      - js2.png
+    thumbnail: js2.png

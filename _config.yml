@@ -12,12 +12,12 @@ urls:
     url: /about
   - text: Blog
     url: /blog
-  # - text: Gallery
-  #   url: /gallery
-  # - text: Shop
-  #   url: /shop
+  - text: Gallery
+    url: /gallery
   - text: Contact
     url: /contact
+  # - text: Shop
+  #   url: /shop
   # - text: Styleguide
   #   url: /styleguide
   # - text: Get Started
@@ -30,7 +30,7 @@ author: hanqpark
 author_bio: 자유롭게 살고 싶은 주니어 개발자입니다 😎
 author_email: "official03x@gmail.com"
 author_location: Seoul, Korea
-author_website_url: ""
+author_website_url:
 typewrite-text: 자유롭게 살고 싶은 주니어 개발자입니다 😎
 
 # Experiences

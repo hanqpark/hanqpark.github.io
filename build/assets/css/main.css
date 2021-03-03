@@ -197,7 +197,9 @@ header { background-color: var(--main-background-color); box-shadow: 0px; height
 
 #recent-articles-header { display: grid; width: 100%; grid-template-columns: 17fr 2fr; }
 
-#article-img, #article-link, #article-alert { padding-left: 5px; padding-top: 2px; margin: 5px; border-radius: 50%; }
+#article-img, #article-link, #article-alert { padding-left: 5px; padding-top: 2px; margin: 5px; }
+
+#article-image { border-radius: 50%; }
 
 .recent-article-link { font-size: 20px; text-decoration: none; }
 
@@ -233,7 +235,7 @@ header { background-color: var(--main-background-color); box-shadow: 0px; height
 
 #author_projects .project-link { color: var(--link-color); }
 
-.company-logo { width: 100px; height: 100px; }
+.company-logo { width: 100px; height: 100px; margin: 0px 20px; }
 
 .author-profile-img { width: 150px; height: 150px; border-radius: 50%; }
 

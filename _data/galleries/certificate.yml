@@ -1,0 +1,23 @@
+picture_path: certificate
+preview:
+  filename: kokoa-c
+  original: kokoa-c.png
+  sizes:
+    - kokoa-c.png
+  thumbnail: kokoa-c.png
+pictures:
+  - filename: kokoa-c
+    original: kokoa-c.png
+    sizes:
+      - kokoa-c.png
+    thumbnail: kokoa-c.png
+  - filename: python-c
+    original: python-c.png
+    sizes:
+      - python-c.png
+    thumbnail: python-c.png
+  - filename: js-c
+    original: js-c.png
+    sizes:
+      - js-c.png
+    thumbnail: js-c.png

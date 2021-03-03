@@ -5,8 +5,8 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Mar 2021 20:02:18 +0900</pubDate>
-    <lastBuildDate>Wed, 03 Mar 2021 20:02:18 +0900</lastBuildDate>
+    <pubDate>Wed, 03 Mar 2021 22:24:03 +0900</pubDate>
+    <lastBuildDate>Wed, 03 Mar 2021 22:24:03 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
 
     
@@ -125,6 +125,12 @@ category: ['jekyll', 'guides', 'sample_category']
             <link>/blog/categories/books/</link>
           </item>
         
+      
+    
+      
+    
+      
+    
       
     
       

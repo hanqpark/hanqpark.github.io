@@ -1,9 +1,16 @@
--
-  title: Mountains
-  directory: mountains
+- title: Certificate
+  directory: certificate
   preview:
-    filename: 1.jpg
-    original: 1-thumbnail.jpg
+    filename: kokoa-c.png
+    original: kokoa-c.png
     sizes:
-    - 1-thumbnail.jpg
-    thumbnail: 1-thumbnail.jpg
+      - kokoa-c.png
+    thumbnail: kokoa-c.png
+- title: Course
+  directory: course
+  preview:
+    filename: kokoa.png
+    original: kokoa.png
+    sizes:
+      - kokoa.png
+    thumbnail: kokoa.png
