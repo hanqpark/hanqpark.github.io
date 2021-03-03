@@ -1,9 +1,8 @@
-title: hanq_log
-subtitle: A Portfolio Jekyll Theme Built for Developers
+title: hanq.log
+subtitle:
 description: >- # this means to ignore newlines until "baseurl:"
-  devlopr-jekyll is a beautiful Jekyll Theme Built For Developers, which is optimized for speed and readability.
 
-url: "https://hanqpark.github.io" # the base hostname & protocol for your site, e.g. https://example.github.io
+url: #"https://hanqpark.github.io" # the base hostname & protocol for your site, e.g. https://example.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
 
 urls:
@@ -26,13 +25,13 @@ urls:
 
 # Edit Author details (For multi authors check _data/authors.yml)
 
-author_logo: profile.png
-author: Hanq Park
-author_bio: 자유롭게 살고 싶은 개발 주니어입니다 😎
+author_logo: profile.jpeg
+author: hanqpark
+author_bio: 자유롭게 살고 싶은 주니어 개발자입니다 😎
 author_email: "official03x@gmail.com"
 author_location: Seoul, Korea
 author_website_url: ""
-typewrite-text: wow
+typewrite-text: 자유롭게 살고 싶은 주니어 개발자입니다 😎
 
 # Experiences
 author_work_experiences:
@@ -51,9 +50,9 @@ author_work_experiences:
 
 # Education
 author_education_details:
-  - college_logo: https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276
+  - college_logo: HYU.jpg
     college_name: Hanyang Univ.
-    college_url: https://hanyang.ac.kr
+    college_url: https://www.hanyang.ac.kr
     college_degree: Information System
     description:
     visibility: true
@@ -89,13 +88,13 @@ github_username: hanqpark
 # hyvor_talk_website_id: 476
 
 # wakatime username (coding activity)
-# wakatime_username: sujaykundu777
+wakatime_username: hanqpark
 
 # mailchimp embedded form url (newsletter):
 # mailchimp_form_url: https://sujaykundu.us10.list-manage.com/subscribe/post?u=50bab1c85eae24ecfb0f68361&amp;id=3a2dd721d0
 
 # formspree (contact form)
-# formspree_email: johndoe@gmail.com
+formspree_email: mnqokwnb
 
 # syntax highlighter
 markdown: kramdown
@@ -130,7 +129,7 @@ paginate_path: "/blog/page/:num/"
 
 collections:
   products:
-    output: true
+    output: false
   authors:
     output: true
 
@@ -175,3 +174,6 @@ exclude:
   - vendor/ruby/
 
 destination: ./build
+
+#Google Analytics
+google_analytics: G-9MSSBKD84Z
