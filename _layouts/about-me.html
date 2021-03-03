@@ -101,15 +101,7 @@ layout: default
       <h1 class="card-title">About</h1>
       <p>{{ site.author_bio }}</p>
     </div>
-    {% endif %}
-
-    <div class="card">
-      <h1>Skills</h1>
-      {%- include author_skills.html -%}
-    </div>
-  </div>
-  <div class="col-lg-7">
-    {% if site.show_author_education_details == true %}
+    {% endif %} {% if site.show_author_education_details == true %}
     <div class="card">
       <h1 class="card-title">Education</h1>
       <br />
@@ -131,7 +123,15 @@ layout: default
       </div>
       {% endif %} {% endfor %}
     </div>
-    {% endif %} {% if site.github_username %}
+    {% endif %}
+
+    <div class="card">
+      <h1>Skills</h1>
+      {%- include author_skills.html -%}
+    </div>
+  </div>
+  <div class="col-lg-7">
+    {% if site.github_username %}
     <div class="card">
       <h1>Github Contribution</h1>
       {%- include github_contribution.html -%}
