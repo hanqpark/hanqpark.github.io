@@ -800,7 +800,12 @@ header {
 .company-logo {
   width: 100px;
   height: 100px;
-  margin: 0px 20px;
+  margin: 20px;
+}
+
+.row__education {
+  display: flex;
+  align-items: center;
 }
 
 .author-profile-img {
