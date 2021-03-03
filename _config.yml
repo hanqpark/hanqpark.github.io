@@ -2,8 +2,8 @@ title: hanq.log
 subtitle:
 description: >- # this means to ignore newlines until "baseurl:"
 
-url: #"https://hanqpark.github.io" # the base hostname & protocol for your site, e.g. https://example.github.io
-baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://hanqpark.github.io" # the base hostname & protocol for your site, e.g. https://example.github.io
+baseurl: "/blog" # the subpath of your site, e.g. /blog
 
 urls:
   - text: Home
