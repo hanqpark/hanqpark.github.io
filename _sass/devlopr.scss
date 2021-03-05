@@ -561,7 +561,7 @@ header {
 /* jumbotron */
 .jumbotron {
   background-color: var(--main-background-color) !important;
-  background-image: url("https://source.unsplash.com/daily?travel/1260x750");
+  background-image: url("https://source.unsplash.com/3840x2160/?attractions");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -585,6 +585,15 @@ header {
   margin-left: 20px !important;
 }
 
+.jumbotron__introduce {
+  margin: auto;
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.7);
+  width: 500px;
+  border-radius: 20px;
+}
+
 .jumbotron-heading {
   color: #111;
   font-size: 35px;
@@ -592,7 +601,7 @@ header {
 
 .lead {
   font-size: 1.3rem !important;
-  font-weight: 600;
+  font-weight: 700;
   color: #111 !important;
 }
 
