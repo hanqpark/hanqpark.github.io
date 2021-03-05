@@ -26,3 +26,8 @@ pictures:
     sizes:
       - js2.png
     thumbnail: js2.png
+  - filename: react_movie
+    original: react_movie.png
+    sizes:
+      - react_movie.png
+    thumbnail: react_movie.png
