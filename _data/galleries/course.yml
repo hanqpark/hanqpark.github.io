@@ -31,3 +31,8 @@ pictures:
     sizes:
       - react_movie.png
     thumbnail: react_movie.png
+  - filename: react_native_weather
+    original: react_native_weather.png
+    sizes:
+      - react_native_weather.png
+    thumbnail: react_native_weather.png
