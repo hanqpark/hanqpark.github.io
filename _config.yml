@@ -2,10 +2,10 @@
 title: 여의도 개발자
 description: 돈쟁이 섬에서의 개발자 표류기
 url: https://hanqpark.github.io
-avatar: /avatar.jpeg
+avatar: /_img/avatar.jpeg
 paginate: 5
 permalink: pretty
-cover_image: https://source.unsplash.com/random/720x1280/?programming
+cover_image: /_img/bg.png
 
 # Gems
 plugins:
