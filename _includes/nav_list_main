@@ -1,0 +1,78 @@
+{% assign sum = site.posts | size %}
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <span class="nav__sub-title">Market</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "FEP" %}
+                        <li><a href="/categories/blog" class="">FEP ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "FIX Protocol" %}
+                        <li><a href="/categories/design-pattern" class="">FIX Protocol ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">Trading</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Upbit" %}
+                        <li><a href="/categories/blog" class=""> Upbit ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">Server</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "System Design" %}
+                        <li><a href="/categories/server1" class="">System Design ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Toss SLASH" %}
+                        <li><a href="/categories/server1" class="">Toss SLASH ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Chat with C" %}
+                        <li><a href="/categories/server1" class="">Chat with C ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Chat with Spring" %}
+                        <li><a href="/categories/server1" class="">Chat with Spring ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+       <span class="nav__sub-title">Database</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "SQLP" %}
+                        <li><a href="/categories/db" class="">SQLP ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul> 
+      </li>
+      {% comment %} <li>	
+            <br>      
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fansohxxn.github.io&count_bg=%23FFCC35&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false">
+      </li> {% endcomment %}
+  </ul>
+</nav>
+

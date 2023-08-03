@@ -1,186 +1,1274 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-07-30T19:57:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">여의도 개발자</title><subtitle>돈쟁이 섬에서의 개발자 표류기</subtitle><author><name>Songzi Vong</name><email>vszhub@gmail.com</email></author><entry><title type="html">Testing MathJax</title><link href="http://localhost:4000/2020/10/02/testing-mathjax/" rel="alternate" type="text/html" title="Testing MathJax" /><published>2020-10-02T16:32:00+09:00</published><updated>2020-10-02T16:32:00+09:00</updated><id>http://localhost:4000/2020/10/02/testing-mathjax</id><content type="html" xml:base="http://localhost:4000/2020/10/02/testing-mathjax/">&lt;p&gt;Not Pure Poole supports &lt;a href=&quot;https://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt;. You can enable it on a page by setting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;math: true&lt;/code&gt; in the front matter.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-03T21:05:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">돈쟁이 섬에서의 개발자 표류기</title><subtitle>돈쟁이 섬에서의 개발자 표류기</subtitle><author><name>여의도 개발자 🧑🏻‍💻</name></author><entry><title type="html">How does 💰bitcoin💰 actually work?</title><link href="http://localhost:4000/fix/bitcoin/" rel="alternate" type="text/html" title="How does 💰bitcoin💰 actually work?" /><published>2021-03-06T00:00:00+09:00</published><updated>2021-03-06T00:00:00+09:00</updated><id>http://localhost:4000/fix/bitcoin</id><content type="html" xml:base="http://localhost:4000/fix/bitcoin/"><![CDATA[<iframe width="1026" height="587" src="https://www.youtube.com/embed/bBC-nXj3Ng4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
-&lt;p&gt;An inline math: \(E=mc^2\).&lt;/p&gt;
+<ul>
+  <li>공동 장부
+    <ul>
+      <li>사람들끼리의 거래 내역을 공동 장부에 써놓고 나중에 한번에 정산.
+        <ul>
+          <li>기록만 해두고 실제 돈 거래는 정산 날 모두 모여서 거래 내역을 보고 검증하여 정산.</li>
+          <li>이 공동 장부는 언제든지 볼 수 있고 기록할 수 있다. 아무나 접속해서 글을 추가할 수 있는 웹사이트 같음.
+            <ul>
+              <li>아무나 기록할 수 있다는게 문제! <strong>진실되게 기록되었다는 것을 어떻게 할 수 있을까?</strong>
+                <ul>
+                  <li>👉 거래 기록에 승인 되었다는 “전자 서명”을 추가. 그리고 그 전자서명은 위조될 수 없는 것이어야 함. <strong>by 공개키(pk), 비밀키(sk)</strong></li>
+                </ul>
+              </li>
+              <li>근데 전자서명을 같은 문서 내에서 복사할 수도 있잖아? (거래내역 + 전자서명) 앨리스가 밥에게 100달러 냈다는 내역을 여러번 복사하면 어떡하지?
+                <ul>
+                  <li>👉 내역 메세지 하나하나에 고유한 ID 값을 포함해야 함. <strong>그래서 블록에 해시값을 넣는 것</strong> (그럼 복사하더라도 다른 해시값으로 인하여 내용이 다르니 자연스레 전자서명값도 달라지게 된다.)</li>
+                </ul>
+              </li>
+              <li>근데 찰리가 천만 달러를 지불한다는 내역만 남기고 막상 나중에 정산날에 나타나 실제 지불하지 않고 먹튀 해버리면 어떡해?
+                <ul>
+                  <li>👉 참여자들이 미리 적입해둔 금액 이상으로는 지출할 수 없게 막아둠. 미리 적입해둔 금액 이상을 지출한 거래는 무효 처리함. 예를 들어 참여자들은 미리 백달러씩을 내야하기 때문에 찰리도 100달러 낸 상태다. 그렇기 때문에 찰리가 누적 100달러 지불을 넘긴 내역을 기록할 땐 그 기록은 무효처리 된다. 그러니 먹튀할 걱정이 없다.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-&lt;p&gt;A display math:&lt;/p&gt;
+<p>현실 세계에서의 손으로 쓴 서명은 어느 문서에서든지 똑같이 보이지만, 전자 서명은 문서마다 달라지기 때문에 훨씬 강력하다. 각각의 키는 256 개의 비트로 구성되며 (\(2^{256}\) 은 우주의 모든 먼지의 개수보다도 더 큰 숫자이다!) <u>서명하는 문서의 내용이 바뀔 때마다 전자 서명 또한 값이 바뀐다.</u></p>
 
-\[i\hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m}
-\frac{\partial^2 \Psi}{\partial x^2} + V \Psi\]</content><author><name>Songzi Vong</name><email>vszhub@gmail.com</email></author><category term="mathjax" /><summary type="html">Not Pure Poole supports MathJax. You can enable it on a page by setting math: true in the front matter.</summary></entry><entry><title type="html">Releasing Not Pure Poole v0.1.0</title><link href="http://localhost:4000/2020/10/01/releasing-not-pure-poole-v0-1-0/" rel="alternate" type="text/html" title="Releasing Not Pure Poole v0.1.0" /><published>2020-10-01T14:56:00+09:00</published><updated>2020-10-01T14:56:00+09:00</updated><id>http://localhost:4000/2020/10/01/releasing-not-pure-poole-v0-1-0</id><content type="html" xml:base="http://localhost:4000/2020/10/01/releasing-not-pure-poole-v0-1-0/">&lt;p&gt;The Jekyll theme &lt;strong&gt;Not Pure Poole&lt;/strong&gt; v0.1.0 was released!&lt;/p&gt;
+<ul>
+  <li>전자 서명 만들기
+    <ul>
+      <li><em>Sign(문서의 내용, 비밀키) = 전자 서명 값</em>
+        <ul>
+          <li>전자 서명 값은 <strong>문서의 내용 + 비밀키</strong>를 조합하는 함수에 의해 만들어진다.
+            <ul>
+              <li>문서의 내용도 전자 서명을 만들 때 반영되므로 누군가 내 전자 서명을 훔쳐도 그 훔친 전자 서명을 다른 문서에 대한 증표로 사용할 수 없다는 것이나 마찬가지이다. 나의 전자 서명은 나의 공개키를 가진 사람이 해독하여 내가 보낸 것임을 확인할 수 있다.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>전자 서명 해독하기
+    <ul>
+      <li><em>Verify(문서의 내용, 전자 서명, 공개키) = True or False</em>
+        <ul>
+          <li>전자 서명이 공개키와 짝꿍이 되는 비밀키로 이용하여 만들어져 있는게 확인이 된다면 True, 아니면 False.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-&lt;p&gt;Not Pure Poole is a simple, beautiful, and powerful Jekyll theme for blogs. It is built on &lt;a href=&quot;https://github.com/poole/poole&quot;&gt;Poole&lt;/a&gt; and &lt;a href=&quot;https://purecss.io/&quot;&gt;Pure&lt;/a&gt;.&lt;/p&gt;
+<blockquote>
+  <p><u>가장 많은 계산 작업</u>을 포함하고 있는 장부가 가장 신뢰할만한 장부이다.</p>
+</blockquote>
 
-&lt;p&gt;For more information about this theme, you can read the &lt;a href=&quot;https://github.com/vszhub/not-pure-poole/blob/master/README.md&quot;&gt;README&lt;/a&gt; file.&lt;/p&gt;</content><author><name>Songzi Vong</name></author><category term="jekyll theme" /><category term="jekyll" /><summary type="html">The Jekyll theme Not Pure Poole v0.1.0 was released!</summary></entry><entry><title type="html">Welcome to Not Pure Poole</title><link href="http://localhost:4000/2020/09/30/welcome-to-not-pure-poole/" rel="alternate" type="text/html" title="Welcome to Not Pure Poole" /><published>2020-09-30T00:18:00+09:00</published><updated>2020-10-01T02:08:25+09:00</updated><id>http://localhost:4000/2020/09/30/welcome-to-not-pure-poole</id><content type="html" xml:base="http://localhost:4000/2020/09/30/welcome-to-not-pure-poole/">&lt;p class=&quot;message&quot;&gt;Welcome to &lt;strong&gt;Not Pure Poole&lt;/strong&gt;! This is an example post to show the layout.&lt;/p&gt;
+<p>비트코인은 은행과 같은 중앙에서 관리하는 중개인이 없기 때문에 모든 사람들이 장부를 복사하여 가지고 있어야 한다. 수 많은 장부 중에서 어떤 장부가 올바른 장부인지 알 수 있는지, 모든 사람들의 장부 내용이 언제나 완전히 똑같다는 것을 어떻게 확신할 수 있는지는 <strong>얼마나 많은 계산 작업을 포함하고 있는 장부인지로 따진다.</strong></p>
 
-&lt;p&gt;First, do you notice the TOC on the right side? Try to scroll down to read this post, you’ll find that the TOC is always sticky in the viewport.&lt;/p&gt;
+<ul>
+  <li>해시 함수는 무엇일까?
+    <ul>
+      <li>입력값의 종류는 중요하지 않다. 어떤 입력 값이든 해시값을 만들어낼 수 있따.</li>
+      <li>해시 함수의 결과는 256 비트이다. (고정적인 길이)</li>
+      <li><strong>입력 값이 같다면 결과 해쉬값은 언제나 똑같다.</strong>
+        <ul>
+          <li>입력 값이 약간 달라진다면 해쉬값 또한 약간 달라지는게 아니라 그냥 완전히 달라진다! 어떻게 달라질지 예측하는 것이 불가능하다. (비트코인에서 사용하는 해쉬 함수인 SHA-256 의 특징) 따라서 해쉬 결과 값을 통해 역으로 입력값을 알아내는 것은 불가능에 가깝다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-&lt;p&gt;Cum sociis natoque penatibus et magnis &lt;a href=&quot;#&quot;&gt;dis parturient montes&lt;/a&gt;, nascetur ridiculus mus. &lt;em&gt;Aenean eu leo quam.&lt;/em&gt; Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt;
+<p>거래 장부 마지막에 107376433 이라는 매직넘버를 넣으면 해쉬값의 첫 30 비트가 모두 0 이 되더라! 이 매직넘버를 얼마내는데 얼마나 많은 계산을 한 장부인지.. SHA-256 해시 함수를 쓰기에, <strong>매직 넘버를 찾아낼 수 있는 유일한 방법은 아무 값이나 찍어 넣고 계산하여 결과를 비교하는 수 밖에 없다.</strong> 즉, 앞에 30 비트가 모두 0 이려면 대략 \(2^{30}\) 즉, 대략 10억번을 무작위로 아무값이나 찍어 넣고 계산해야 한다는 이야기이다. 👉 <strong>Proof Of Work</strong> 거래 내역이 바뀔 때마다 해시값도 바뀌므로 매직넘버를 알아내기 위한 위 10억번 계산을 다시 해야한다는 소리이다.</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
-&lt;/blockquote&gt;
+<p><img src="https://user-images.githubusercontent.com/42318591/110204115-a907b600-7eb4-11eb-894e-c4b65f48a990.png" alt="image" /></p>
 
-&lt;p&gt;Etiam porta &lt;strong&gt;sem malesuada magna&lt;/strong&gt; mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.&lt;/p&gt;
+<p><img src="https://user-images.githubusercontent.com/42318591/110204132-cdfc2900-7eb4-11eb-8d2b-0dc5b79fa828.png" alt="image" /></p>
 
-&lt;h2 id=&quot;inline-html-elements&quot;&gt;Inline HTML elements&lt;/h2&gt;
+<p>“장부를 가진 모든 사람들은 <u>가장 많은 계산</u> 작업이 포함된 장부를 믿으면 된다.” 👉 <u>매직 넘버를 찾아야지만 유효한 블록으로 인정될 수 있다.</u></p>
 
-&lt;p&gt;HTML defines a long list of available inline tags, a complete list of which can be found on the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element&quot;&gt;Mozilla Developer Network&lt;/a&gt;.&lt;/p&gt;
+<p>장부는 블록 단위로 나누어 구성되어 있다. 블록에는 일정한 수의 거래내역과 작업증명(매직 넘버)와 함께 담겨 있다. 그리고 그 매직넘버로 만든 해쉬값을 그 블록의 해쉬값으로 한다. 블록도 작업 증명이 있어야지만, 즉 PoW 방식에 맞는 해쉬값을 (ex 앞에 60비트가 0인 해쉬값) 도출할 수 있는 매직넘버가 계산된 블록이어야지만 유효한 블록으로 인식될 수 있다. 그리고 이와 동시에 이전 블록(블록의 순서를 보장하기 위한 체인)의 매직넘버를 저장한다. 하나의 블록을 수정하려면 모든 블록들의 작업 증명을 다시 해야 한다.</p>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;To bold text&lt;/strong&gt;, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;To italicize text&lt;/em&gt;, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;em&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;mark&gt;To highlight&lt;/mark&gt;, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;mark&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Abbreviations, like &lt;abbr title=&quot;HyperText Markup Langage&quot;&gt;HTML&lt;/abbr&gt; should use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt;, with an optional &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;title&lt;/code&gt; attribute for the full phrase.&lt;/li&gt;
-  &lt;li&gt;Citations, like &lt;cite&gt;— Mark Otto&lt;/cite&gt;, should use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;Deleted&lt;/del&gt; text should use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;del&amp;gt;&lt;/code&gt; and &lt;ins&gt;inserted&lt;/ins&gt; text should use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;ins&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Superscript &lt;sup&gt;text&lt;/sup&gt; uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sup&amp;gt;&lt;/code&gt; and subscript &lt;sub&gt;text&lt;/sub&gt; uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+<p>즉, 매직넘버를 찾으면 블록체인에 내가 제안한 블록이 반영될 수 있다는 얘기다! 성공적으로 매직넘버를 찾아 블록을 블록체인에 반영하면 나는 “블록 생성자”가 되고 <u>블록 생성자에게는 보상이 주어진다. 👉 블록을 생성하고 보상받는 것을 "채굴"이라고 부른다.</u> (블록의 맨 처음 거래로 기재된다. <strong>블록 보상</strong>)</p>
 
-&lt;p&gt;Most of these elements are styled by browsers with few modifications on our part.&lt;/p&gt;
+<p>매직넘버를 찾아 새 블록을 반영한 보상으로 받는 금액은 전자 서명도 필요하지 않는다. 👉 블록이 새로 생성될 때마다 이 “보상”에 의해 장부달러의 총액이 증가한다.</p>
 
-&lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
+<p>채굴자들이 하는 일 👉 브로드캐스팅 되는 거래 정보를 수집해서 블록을 새로 생성하고 알맞는 매직넘버를 찾아 블록체인에 이 블록을 반영하고 보상받는 일! 👉 매직넘버를 더 빨리 찾기 위한 경쟁</p>
 
-&lt;p&gt;Footnotes are supported as part of the Markdown syntax. Here’s one in action. Clicking this number&lt;sup id=&quot;fnref:fn-sample_footnote&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn-sample_footnote&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; will lead you to a footnote. The syntax looks like:&lt;/p&gt;
+<p>채굴자가 아닌 그냥 비트코인을 결제 수단으로만 사용하는 사람들 👉 이런 일반 사람들은 그냥 채굴자가 반영한 블록이 브로드캐스팅 되는 것을 듣고 그 블록 정보만 수집해서 블록체인 전체를 새롭게 복사하여 업데이트 하면 도니다.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Clicking this number[^fn-sample_footnote]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<p>충돌되는 두 블록체인 중에선 더 많은 계산 작업이 포함된, 즉 더 긴 블록체인만을 유요한 블록체인으로 받아들인다. 두 블록체인의 길이가 같다면 더 긴 블록체인 정보가 들어올 때까지 어느 한쪽도 선택하지 않고 기다린다.</p>
 
-&lt;p&gt;Each footnote needs the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^fn-&lt;/code&gt; prefix and a unique ID to be referenced for the footnoted content. The syntax for that list looks something like this:&lt;/p&gt;
+<p>비트코인은 새 블록을 생성하는데 드는 시간이 평균적으로 10분이 되게끔 주기적으로 0 의 갯수를 조절한다. (해시값의 앞 비트의 0 이 몇개가 되는 매직넘버를 찾을지에서 그 0의 개수) 10분마다 보상 받는 사람이 나오는 셈이다.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[^fn-sample_footnote]: Handy! Now click the return link to go back.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<p><u>비트코인에서의 모든 코인은 이 블록 보상으로 만들어진다.</u></p>
 
-&lt;p&gt;You can place the footnoted content wherever you like. Markdown parsers should properly place it at the bottom of the post.&lt;/p&gt;
+<p>한국은행 같은 중앙은행이 실제 돈의 통화의 공급량을 조절한다. 그러나 비트코인에서의 통화량은 10 분에 한번씩 발생하는 “보상”이 바로 통화 공급의 증가량인 것이다. 마치 금화를 채굴한 것 처럼 말이다. 중앙 조직에서 통화량을 조절하는 것이 아니니 초인플레이션 같은 위기나 통화의 공급이 급격히 불려지는 것에 대한 위험을 걱정하지 않아도 된다. 비트코인은 고정된 공급원을 갖도록 설계되어 있기 때문에 이런 위험이 없다.</p>
 
-&lt;h2 id=&quot;heading&quot;&gt;Heading&lt;/h2&gt;
+<blockquote>
+  <p>“Block Explorer” 웹사이트에 가면 비트코인의 블록체인 정보를 볼 수 있다.</p>
+</blockquote>
 
-&lt;p&gt;Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+<p>언젠간 채굴 보상으로 받을 수 있는 돈이 0 원이 될 것이다.(보상은 해가 갈수록 점점 줄어들고 있다.) 그래도 블록 보상 외에도 <strong>일정량의 거래 수수료</strong>를 챙길 수 있기 때문에 채굴자들은 보상이 없어져도 계속 채굴할 것이다. 비트코인 거래가 발생하면 거래 수수료가 붙는데 그 수수료는 그 지불이 포함된 블록의 생성자가 가져가게된다.</p>
 
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+<p>비트코인은 하나의 블록에 최대 2400개의 거래만 들어갈 수 있다. 2400개 밖에 안되는데 게다가 비트코인 처리 시간은 10분으로 느린 편이다. 그래서 높은 수수료를 지불하게 되는 원인이 된다. 채굴자가 어떤 거래를 선택해서 블록에 포함할지 결정하는 기준이 거래 수수료이기 때문이다.</p>
 
-&lt;p&gt;Inline code is available with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;code&amp;gt;&lt;/code&gt; element. Snippets of multiple lines of code are supported through Rouge. Longer lines will automatically scroll horizontally when needed. You may also use code fencing (triple backticks) for rendering code.&lt;/p&gt;
+<hr />
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console&lt;/span&gt;
+<p><br /></p>
 
-&lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those arguments&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;return a + b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우
+언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+</code></pre></div></div>
 
-&lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<p><a href="#" class="btn btn--primary align-right">맨 위로 이동하기</a></p>]]></content><author><name>여의도 개발자 🧑🏻‍💻</name></author><category term="FIX" /><category term="BlockChain" /><category term="BitCoin" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">블록체인(BlockChain)과 블록체인 네트워크, Proof of Work(PoW)</title><link href="http://localhost:4000/fep/blockchain/" rel="alternate" type="text/html" title="블록체인(BlockChain)과 블록체인 네트워크, Proof of Work(PoW)" /><published>2021-03-04T00:00:00+09:00</published><updated>2021-03-04T00:00:00+09:00</updated><id>http://localhost:4000/fep/blockchain</id><content type="html" xml:base="http://localhost:4000/fep/blockchain/"><![CDATA[<h2 id="-블록체인이란">🚀 블록체인이란?</h2>
 
-&lt;p&gt;You may also optionally show code snippets with line numbers. Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linenos&lt;/code&gt; to the Rouge tags.&lt;/p&gt;
+<p><img src="https://user-images.githubusercontent.com/42318591/110193114-696da980-7e75-11eb-8be1-13d9e54fff5e.png" alt="image" /></p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console&lt;/span&gt;
+<ul>
+  <li><u>Data 들을 블록 단위로 묶어 저장</u>하고 이 <u>블록들을 체인 형태로 연결</u>하여 저장한 기술
+    <ul>
+      <li>연결리스트랑 똑같다! 근데 앞의 노드를 기억하는 방법이 블록체인은 조금 다름
+        <ul>
+          <li>이전 노드의 메모리 주소를 기억하는 연결리스트와 달리 블록체인은 이전 블록을 기억하는 방법에 <strong>해시 함수</strong>를 씀 👉 <u>앞에 있는 이전 블록의 고유한 해시값을 저장한다.</u> 👉 이런식으로 블록들을 “연결”(체인!)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-&lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those arguments&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;return a + b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+<h3 id="-블록의-구성">🔥 블록의 구성</h3>
 
-&lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<blockquote>
+  <p>하나의 블록엔 3가지 정보를 지닌다.</p>
+</blockquote>
 
-&lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.&lt;/p&gt;
+<ol>
+  <li>데이터</li>
+</ol>
 
-&lt;h3 id=&quot;lists&quot;&gt;Lists&lt;/h3&gt;
+<ul>
+  <li>비트코인의 블록의 경우 “장부”가 데이터가 됨.</li>
+  <li><em>발송자</em>, <em>수신자</em>, <em>금액</em></li>
+</ul>
 
-&lt;p&gt;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/p&gt;
+<ol>
+  <li>이 블록의 해시값</li>
+</ol>
 
-&lt;ul&gt;
-  &lt;li&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et.&lt;/li&gt;
-  &lt;li&gt;Donec id elit non mi porta gravida at eget metus.&lt;/li&gt;
-  &lt;li&gt;Nulla vitae elit libero, a pharetra augue.&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>블록들을 식별할 수 있는 해당 블록의 고유한 값. 마치 지문 같은 역할.</li>
+</ul>
 
-&lt;p&gt;Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.&lt;/p&gt;
+<ol>
+  <li>내 앞에 있는 블록의 해시값</li>
+</ol>
 
-&lt;ol&gt;
-  &lt;li&gt;Vestibulum id ligula porta felis euismod semper.&lt;/li&gt;
-  &lt;li&gt;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/li&gt;
-  &lt;li&gt;Maecenas sed diam eget risus varius blandit sit amet non magna.&lt;/li&gt;
-&lt;/ol&gt;
+<ul>
+  <li>👉 연결리스트 같은 체인연결</li>
+</ul>
 
-&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.&lt;/p&gt;
+<p>블록 안에 있는 <strong>최소한의 데이터라도 변경되면 해시값도 완전히 다른 값으로 변경된다.</strong> 하나의 블록의 데이터가 바뀌면 그 블록의 해시값이 바뀌기 때문에 그 블록의 해시값을 가지고 있는 다음 블록부터 연쇄적으로 그 뒤에 있는 모든 블록들을 무효화시키게 된다. <u>그러므로 블록을 해킹 및 조작하기 위해선 그 위에 있는 모든 블록들의 이전 해시값들도 전부 조작해야한다는 말이 된다.</u></p>
 
-&lt;dl&gt;
-  &lt;dt&gt;HyperText Markup Language (HTML)&lt;/dt&gt;
-  &lt;dd&gt;The language used to describe and define the content of a Web page&lt;/dd&gt;
+<h3 id="-블록의-높이">🔥 블록의 높이</h3>
 
-  &lt;dt&gt;Cascading Style Sheets (CSS)&lt;/dt&gt;
-  &lt;dd&gt;Used to describe the appearance of Web content&lt;/dd&gt;
+<ul>
+  <li>블록 체인 구조에서 몇 번째에 위치한 블록이냐를 곧 그 블록의 “높이”가 무엇이냐로 표현한다. (연결리스트처럼 가로보단 스택처럼 세로로 표현하는 것 같다.)</li>
+</ul>
 
-  &lt;dt&gt;JavaScript (JS)&lt;/dt&gt;
-  &lt;dd&gt;The programming language used to build advanced Web sites and applications&lt;/dd&gt;
-&lt;/dl&gt;
+<h3 id="-블록의-생성-주기">🔥 블록의 생성 주기</h3>
 
-&lt;p&gt;Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.&lt;/p&gt;
+<p>다음 블록을 생성하기까지 걸리는 시간을 “블록의 생성 시간”이라고 한다. 블록 생성 시간이 비교적 일정한 경우 “블록 생성 주기”라고 표현한다. 비트코인의 블록 생성 주기는 <strong>10 분</strong>이다. 즉, 새로운 데이터로 블록을 만들면 이가 반영되는데 10분정도 걸린다는 것이다. 이더리움의 경우 블록 생성 주기는 <strong>15 초</strong>이다. (정확히 얘기하면 딱 10분, 15초로 떨어지는게 아니라 대략! 그에 가까운!)</p>
 
-&lt;h3 id=&quot;images&quot;&gt;Images&lt;/h3&gt;
+<ul>
+  <li>새로운 데이터가 생성된 블록에 반영되는 것을 “체결하다”라고 표현한다.
+    <ul>
+      <li>애플리케이션마다 데이터가 체결되는 시간이 매우 중요하다.
+        <ul>
+          <li>신용카드 결제처럼 빨리 반영되야 하는 경우는 블록 생성 주기가 짧아야 할 것이다. 반면 보험 가입처럼 빨리 반영되지 않아도 그다지 상관 없는 경우는 블록 생성 주기가 짧지 않아도 괜찮을 것이다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-&lt;p&gt;Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.&lt;/p&gt;
+<p>이처럼 블록을 새로 추가하는데 지연시간을 두는 것은 블록을 변조하는 것을 매우 어렵게 만든다. 왜냐하면 블록”체인” 특성상 하나의 블록을 조작하려면 그 뒤에 있는 모든 블록들도 같이 조작해야 하기 때문에 뒤에 있는 모든 블록들도 작업 증명(PoW)을 다시 해야 하기 때문이다.</p>
 
-&lt;p&gt;&lt;img src=&quot;http://placehold.it/800x400&quot; alt=&quot;placeholder&quot; title=&quot;Large example image&quot; /&gt;
-&lt;img src=&quot;http://placehold.it/400x200&quot; alt=&quot;placeholder&quot; title=&quot;Medium example image&quot; /&gt;
-&lt;img src=&quot;http://placehold.it/200x200&quot; alt=&quot;placeholder&quot; title=&quot;Small example image&quot; /&gt;&lt;/p&gt;
+<h3 id="-해시-함수">🔥 해시 함수</h3>
 
-&lt;p&gt;Align to the center by adding &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class=&quot;align-center&quot;&lt;/code&gt;:&lt;/p&gt;
+<p><img src="https://user-images.githubusercontent.com/42318591/110067659-85127a80-7db7-11eb-8a90-dc4d6c06e14d.png" alt="image" /></p>
 
-&lt;p&gt;&lt;img src=&quot;http://placehold.it/400x200&quot; alt=&quot;placeholder&quot; title=&quot;Medium example image&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+<blockquote>
+  <p>데이터가 바뀌면 그 데이터의 해시값도 바뀐다.</p>
+</blockquote>
 
-&lt;h3 id=&quot;tables&quot;&gt;Tables&lt;/h3&gt;
+<ul>
+  <li>해시 함수
+    <ul>
+      <li>임의의 길이의 데이터를 고정적 길이의 데이터로 매핑한 함수
+        <ul>
+          <li>f(x) = y 로하면 y는 x의 “고유”한 해시값임. y는 x를 넣어야만 나올 수 있는 값.</li>
+          <li>따라서 <u>x 가 달라지면 그의 해시값도 달라진다. x 의 값이 달라지면 그의 해시값인 y 의 해시값도 자동으로 달라진다.</u></li>
+        </ul>
+      </li>
+      <li>긴 URL을 bit.ly 로 짧게 줄여주는 것도 일종의 해시이다.</li>
+    </ul>
+  </li>
+  <li>해시값은 256 비트이다. (16진수로는 64자)</li>
+</ul>
 
-&lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+<p><br /></p>
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Upvotes&lt;/th&gt;
-      &lt;th&gt;Downvotes&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Totals&lt;/td&gt;
-      &lt;td&gt;21&lt;/td&gt;
-      &lt;td&gt;23&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Alice&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-      &lt;td&gt;11&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Bob&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Charlie&lt;/td&gt;
-      &lt;td&gt;7&lt;/td&gt;
-      &lt;td&gt;9&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+<h2 id="-블록체인-네트워크">🚀 블록체인 네트워크</h2>
 
-&lt;p&gt;Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.&lt;/p&gt;
+<blockquote>
+  <p>네트워크 참여자 전원은(P2P) 모든 블록을 동일한 순서로 저장하여 <u>모두 같은 블록 체인을 유지</u> 👉 블록체인 네트워크의 핵심 👉 탈중앙화(서버, 은행 같은 중앙시스템이 필요 없음)</p>
+</blockquote>
 
-&lt;hr /&gt;
+<p><img src="https://user-images.githubusercontent.com/42318591/110071766-f6eec200-7dbf-11eb-83e7-123eb0890b4c.png" alt="image" /></p>
 
-&lt;p&gt;Want to see something else added? &lt;a href=&quot;https://github.com/vszhub/not-pure-poole/issues/new&quot;&gt;Open an issue.&lt;/a&gt;&lt;/p&gt;
+<p>네트워크 참여자 한명 한명이 <strong>노드</strong>가 된다. 노드에는 블록체인들이 있는데 모든 노드는 전부 동일한 블록체인을 가져야 한다. 즉, <u>모든 노드는 같은 데이터를 가지고 있다.(전체 블록체인을 복사해온다.)</u> 그래야 올바른 상태다. 몇몇 노드의 해킹이나 다른 상태 변화로 인하여 노드들의 블록체인이 다를 수 있다. 이때 네트워크 모든 노드의 절반 이상의 노드들의 블록체인들이 동일한 상태라면 이게 올바른 블록체인 상태라고 판단이 된다. 그러니 블록체인 네트워크를 해킹하려면 전체 노드의 절반 이상의 블록체인을 해킹해야 한다는 말이다. 게다가 하나의 블록을 해킹하기 위해선 그 뒤에 있는 블록들도 전부 해킹해야하니 장난아닐 것이다! 그래서 블록체인 네트워크를 해킹하는데에 들어가는 비용이 어마무시하여 해킹이 불가능에 가깝다는 것!</p>
 
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:fn-sample_footnote&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;Handy! Now click the return link to go back. &lt;a href=&quot;#fnref:fn-sample_footnote&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Songzi Vong</name><email>vszhub@gmail.com</email></author><category term="jekyll theme" /><category term="jekyll" /><category term="tutorial" /><summary type="html">Welcome to Not Pure Poole! This is an example post to show the layout.</summary></entry></feed>
+<p><u>각 노드는 전체 블록체인을 복사해와서 각자의 블록체인 전체가 유효한지를 검증한다.</u> 새로 만들어진 블록은 전체 노드에게 전송된다. 그리고 각 노드는 새로 받은 이 블록이 변조되지 않았는지를 확인 후 자신의 블록체인에 반영하는데 변조된 블록이 있더라도 그 블록은 네트워크의 다른 노드들에 의해서 거부된다.</p>
+
+<p>누구나 블록체인에 블록을 추가할 수 있으며(검증 절차를 거쳐야 하지만) 누구나 블록체인 내부를 들여다볼 수 있다. (이전 블록들 전부 조회 가능)</p>
+
+<h3 id="-합의-consensus">🔥 합의 (Consensus)</h3>
+
+<p>넣으려는 데이터가 틀린 데이터면 어떡해? 비트코인은 블록체인의 첫 번째 어플리케이션
+은행을 못 믿겠다. 은행이라는 중앙화된 시스템이 모든 사람의 장부를 관리하고 그 은행이 관리하는 장부를 믿음. 비트코인은 이와 달리.. 중앙 시스템 필요 없이 그냥 우리 모두가 장부를 가지고 있다면 어때? 우리 모두가 다 기억하면 되잖아. 앨리스 잔고가 100불인데 앨리스가 찰리한테 150불을 보낸다는건 틀린 정보다. 그러므로 합의가 필요하다. 앨리스가 50불을 보내는거 맞는 것 같아 내가 생각해도 맞는 것 같아~ 하고 모두가 합의하면 그 데이터는 추가될 수 있는 데이터라고 판단되어 블록으로서 추가될 수 있다. <strong>PoW (Proof of Work 작업증명시스템) 기반의 합의 구조를 만듬</strong> (퍼즐 풀기) 탈중앙화 시스템이다보니 노드 한명 한명의 제안의 신뢰성을 검증해야 한다. 나는 저 노드의 신원은 모르지만 퍼즐을 풀어냈으니 올바르게 참여하고 있는 사람이구나 하고 인지하고 그 사람이 제안한 블록을 받아들이고 합의하는 시스템이 PoW.</p>
+
+<h3 id="-합의-알고리즘">🔥 합의 알고리즘</h3>
+
+<p><img src="https://user-images.githubusercontent.com/42318591/110075676-839c7e80-7dc6-11eb-881d-947cc05962f5.png" alt="image" /></p>
+
+<blockquote>
+  <p>“퍼즐을 풀어서” 새 블록을 제안할 자격을 얻다. 👉 <strong>채굴 하다.</strong></p>
+</blockquote>
+
+<p>지금의 블록은 가장 마지막 블록. 그러니 다음 블록은 아직 없는 상태 이 때 내가 다음 블록을 제안하고 싶다. 이 제안할 수 있는 자격을 취득하는 방법은 PoW 에서는 특정 해시를 찾으라고 함.(해시값은 256비트니까 경우의수가 무려 \(2^{256}\)) 니가 찾은 값에서 앞에 0 이 몇개면 퍼즐을 풀었다고 인정해줄게 이런 식! 이건 경쟁이다. 먼저 푸는 사람이 더 유리하다. 컴퓨터는 해시를 만드는데는 좀 취약하다. 이것 저것 준비할게 많다. 그러나 GPU 는 단순해서 준비 없이 연산을 착착하기 때문에 해시를 만들기에 유리하다. 비트코인 초반엔 CPU 채굴이였기 때문에 어려운 정도가 CPU 가 해시를 만드는 것에 초점이 맞춰져 있었다. (보통 10분에 하나를 풀 수 있는 정도) 그러나 너도 나도 GPU 로 채굴을 하기 시작하면서 어려운 정도가 훨씬 높아졌다. 그래서 개인이 점점 더 좋은 GPU 를 가져야 한다. 그러다 보니 채굴 공장도 생겨나고 해시 생성 전용 기계도 생기고.. 연산 능력이 좋은 장비를 가지고 있는 사람이 문제를 풀어내기에 유리하다. 이래서 PoW 방식은 점점 갈 수록 노드가 네트워크에 참여하기가 힘들어진다. 진입 장벽이 높아짐. 채굴 공장이 필요하니까! 비트코인과 이더리움은 이런 PoW 시스템이다.</p>
+
+<p>PoS 는 네트워크에 기여한 지분으로 자격을 줌. 토근(코인)을 많이 가지고 있는 사람이 더 높은 확률로 다음 블록을 제안할 수 있다. 이더리움은 PoW 로 경쟁을 하면서 기반을 닦아 놓고 토큰이 각자 많이 쌓이면 그때 PoS 로 가려고 한다고 한다.</p>
+
+<p><br /></p>
+
+<h3 id="-이더리움">🔥 이더리움</h3>
+
+<ul>
+  <li>Slidity
+    <ul>
+      <li>이더리움을 사용하기 위하여 특수 제작된 프로그래밍 언어</li>
+      <li>자바스크립트와 유사하다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="-블록체인의-성질-정리">🔥 블록체인의 성질 정리</h3>
+
+<blockquote>
+  <p>출처 : &lt;Klaytn 클레이튼 스마트계약과 탈중앙앱&gt;</p>
+</blockquote>
+
+<ul>
+  <li>블록체인은 한명 이상의 참여자가 있는 네트워크에서 관리</li>
+  <li>네트워크 참여자 전원은 모든 블록을 동일한 순서로 저장하여 모두 같은 블록체인을 유지</li>
+  <li>자격이 있는 참여자는 블록을 제안할 수 있음. 블록 제안 자격은 네트워크마다 상이.
+    <ul>
+      <li><strong>PoW 작업 증명 시스템에서는 이를 “문제를 풀어내면” 그 노드는 제안할 자격이 있다고 간주</strong></li>
+    </ul>
+  </li>
+  <li>블록이 체인에 추가된다는 것은 <strong>참여자들 모두가 새 블록을 자신의 체인에 추가해야한다는 이야기이다.</strong> 👉 모든 노드는 같은 데이터를 가지고 있어야 하므로.</li>
+  <li>따라서 새로운 블록이 체인에 추가되려면 네트워크의 합의가 필요. 합의 방법도 네트워크마다 상이
+    <ul>
+      <li>중앙적인 어느 한 주체가 단독으로 결정하는 구조가 아닌, 여러 참여자가 합의를 통해 결정하기 때문에 블록체인은 탈중앙화되어 있다고 표현.</li>
+    </ul>
+  </li>
+  <li>참여자 전원은 <strong>이전 블록들을 저장하고 있으므로 새로운 블록의 무결성을 확인 가능함.</strong></li>
+  <li>투명성 👉 새롭게 제안되는 블록은 참여자들이 검증 및 합의할 수 있는 형태여야 함.</li>
+  <li>
+    <p>불변성 👉 한번 쓰여진 블록은 이전의 합의를 번복할 수 있지 않는 한 변경될 수 없음.</p>
+
+    <ul>
+      <li>7 번째 블록을 번복하고 싶다면 8, 9, 10, 11,.. 뒤의 블록들도 전부 번복할 수 있어야 한다. 그래서 번복이 힘들다! 거의 불가능하다.</li>
+    </ul>
+  </li>
+  <li>블록체인의 보안
+    <ul>
+      <li>1️⃣ 변경할 수가 없다. 👉 “체인”성질로, 변경하려면 뒤에있는 모든 블록을 다 변경해야 함. 고로 변경이 불가능.</li>
+      <li>2️⃣ 분산되어 있다. 👉 P2P 네트워크의 모든 사람들이 다 같이 검증한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="-출처-및-참고">🚀 출처 및 참고</h2>
+
+<ul>
+  <li>&lt;Klaytn 클레이튼 스마트계약과 탈중앙앱&gt; 강의
+    <ul>
+      <li>이 글에 쓰인 모든 그림 자료는 이 강의의 캡처 화면임을 밝힙니다.</li>
+    </ul>
+  </li>
+  <li>&lt;세상 친절한 비트코인 수업&gt; 책</li>
+</ul>
+
+<iframe width="1026" height="587" src="https://www.youtube.com/embed/SSo_EIwHSd4?list=PLzvRQMJ9HDiSbvXWQ7OdgVccdr7Wni5Qw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우
+언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+</code></pre></div></div>
+
+<p><a href="#" class="btn btn--primary align-right">맨 위로 이동하기</a></p>]]></content><author><name>여의도 개발자 🧑🏻‍💻</name></author><category term="FEP" /><category term="BlockChain" /><category term="BitCoin" /><summary type="html"><![CDATA[🚀 블록체인이란?]]></summary></entry><entry><title type="html">대칭키, 비대칭키, 공개키, 개인키, 전자서명</title><link href="http://localhost:4000/fix/cryptography/" rel="alternate" type="text/html" title="대칭키, 비대칭키, 공개키, 개인키, 전자서명" /><published>2021-03-04T00:00:00+09:00</published><updated>2021-03-04T00:00:00+09:00</updated><id>http://localhost:4000/fix/cryptography</id><content type="html" xml:base="http://localhost:4000/fix/cryptography/"><![CDATA[<h2 id="-대칭키-비대칭키">🚀 대칭키, 비대칭키</h2>
+
+<ul>
+  <li><strong>대칭키</strong>
+    <ul>
+      <li>암호화와 복호화에 사용되는 키가 동일하다. 하나의 키로 암호화와 복호화 둘 다에 사용된다.
+        <ul>
+          <li>따라서 암호화 할 때 사용한 키를 복호화하려는 사람도 그 동일한 키를 알고 있어야 하기 때문에 키를 교환해야한다는 수고로움이 있다.</li>
+          <li>해킹에도 취약하다. 키만 알면 복호화도 바로 할 수 있기 때문이다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>비대칭키</strong>
+    <ul>
+      <li>암호화와 복호화에 사용되는 키가 서로 다르다. 👉 키가 2개 (한 쌍) 필요함.
+        <ul>
+          <li>공개키 : 모든 사람이 접근 가능한 키</li>
+          <li>개인키 : 각자 개인이 가지고 있는 키
+            <ul>
+              <li>어떻게 암호화, 복호화에 사용되는지는 밑에 “공공키 암호화”, “전자 서명” 참고</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><u>누구든지 암호화 할 수 있지만 비밀키를 아는 사람만 복호화할 수 있어야 한다.</u>
+        <ul>
+          <li>비밀키로부터 공개키를 도출하는 것은 쉽다.</li>
+          <li>그러나 공개키로부터 비밀키를 도출하는 것은 매우 어렵다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="-공개키-개인키">🚀 공개키, 개인키</h2>
+
+<blockquote>
+  <p>블록체인의 보안 체계로 <strong>비대칭키</strong>를 사용한다. 공개키와 개인키 이렇게 2 개의 <u>한 쌍(pair)</u>을 사용. 두 키가 짝을 이룬다.</p>
+</blockquote>
+
+<ul>
+  <li><strong>공개키</strong> ex) 계좌 번호, 집 주소
+    <ul>
+      <li>나의 공개키는 여러 사람들 모두에게 공개된다. 마치 계좌번호처럼!
+        <ul>
+          <li>누군가 내 계좌에 송금하고 싶어할 때 내 계좌번호를 알려주듯 내 공개키를 알려주면 된다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>개인키</strong> ex) 계좌 비밀번호, 집 열쇠
+    <ul>
+      <li>나의 개인키는 키의 주인인 개인만 가질 수 있다. 여러 사람들에게 공개되면 안된다. 마치 계좌 비밀번호처럼!
+        <ul>
+          <li>내가 내 계좌 안에 든 돈에 접근하고자 할 때 계좌 비밀번호로 계좌에 접근하듯 개인키를 사용하면 된다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>하나의 비트코인 은행 계좌는 두 개의 주소를 가지는 셈이다. 공개 주소(공개키)와 개인 주소(개인키).</p>
+
+<p><br /></p>
+
+<h2 id="-전자-서명digital-signature">🚀 전자 서명(Digital Signature)</h2>
+
+<blockquote>
+  <p>은행(중앙시스템)이 없는 암호화폐 세계에선 “전자 서명”을 통해 서로의 신원을 확인하고 입증하여 거래를 할 수 있다.</p>
+</blockquote>
+
+<ul>
+  <li>1️⃣ 공개키 암호화 👉 “오직 너만 읽을 수 있는 <u>데이터</u>야”
+    <ul>
+      <li>공개키로 암호를 만들 수 있고 그 공개키에 대응하는 개인키로 그것을 복호화 할 수 있다.</li>
+      <li>공개키로 암호를 만들어 이를 보내면 받는이가 본인의 개인키로 그것을 복호화.
+        <ul>
+          <li>영희가 철수의 <strong>공개키</strong>를 가지고 있다면 영희는 철수의 <strong>공개키</strong>로 <u>오직 철수만 읽을 수 있는 암호</u>를 생성할 수 있다. 철수는 본인의 <strong>개인키</strong>로 그 암호를 디코딩하여 읽을 수 있다.
+            <ul>
+              <li>즉, 공공키로 암호화 / 개인키로 복호화</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>2️⃣ 전자 서명 👉 “이 암호를 보낸 사람이 나라는 것을 보여주는 <u>증명</u> (true or false).”
+    <ul>
+      <li>개인키로 암호를 만들 수 있고 그 개인키에 대응하는 공개키로 그것을 복호화 할 수 있다.</li>
+      <li>개인키로 암호를 만들어 이를 보내면 받는 이가 본인의 공개키로 그것을 복호화.
+        <ul>
+          <li>영희가 철수에게 영희의 <strong>개인키</strong>로 만든 암호인 <u>전자 서명</u>을 철수에게 보내면, 철수는 철수가 알고 있는 영희의 <strong>공개키</strong>로 영희의 전자 서명을 디코딩하여 <u>이 서명이 영희의 서명이 맞는지를 확인</u>할 수 있다.
+            <ul>
+              <li>즉, 개인키로 암호화 / 공개키로 복호화</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>영희가 철수와 거래를 하고자할 때 영희는 철수에게 1️⃣,2️⃣ 두 가지 암호를 보내게 된다.</p>
+
+<p>이게 다 각자의 공공키와 개인키는 <strong>한 쌍</strong>이기 때문에 가능한 것이다.</p>
+
+<p><br /></p>
+
+<h2 id="-참고">🚀 참고</h2>
+
+<ul>
+  <li>&lt;Klaytn 클레이튼 스마트계약과 탈중앙앱&gt; 강의</li>
+  <li>&lt;세상 친절한 비트코인 수업&gt; 책</li>
+</ul>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우
+언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+</code></pre></div></div>
+
+<p><a href="#" class="btn btn--primary align-right">맨 위로 이동하기</a></p>]]></content><author><name>여의도 개발자 🧑🏻‍💻</name></author><category term="FIX" /><category term="BlockChain" /><category term="BitCoin" /><summary type="html"><![CDATA[🚀 대칭키, 비대칭키]]></summary></entry><entry><title type="html">ch1-1. 멀티 쓰레드</title><link href="http://localhost:4000/toss%20slash/ch1-1/" rel="alternate" type="text/html" title="ch1-1. 멀티 쓰레드" /><published>2021-01-25T00:00:00+09:00</published><updated>2021-01-25T00:00:00+09:00</updated><id>http://localhost:4000/toss%20slash/ch1-1</id><content type="html" xml:base="http://localhost:4000/toss%20slash/ch1-1/"><![CDATA[<p class="notice--warning">인프런에 있는 Rookiss님의 <strong>[C#과 유니티로 만드는 MMORPG 게임 개발 시리즈] <u>Part4: 게임 서버</u></strong> 강의를 듣고 정리한 필기입니다. 😀<br />
+<a href="https://www.inflearn.com/course/유니티-MMORPG-개발-Part4">🌜 강의 들으러 가기 Click</a></p>
+
+<h1 id="-멀티-쓰레드-프로그래밍">📌 멀티 쓰레드 프로그래밍</h1>
+
+<h2 id="-멀티-쓰레드">🚀 멀티 쓰레드</h2>
+
+<blockquote>
+  <p>서버는 멀티 쓰레드를 사용한다.</p>
+</blockquote>
+
+<p><strong>CPU 코어 하나당 하나의 쓰레드만을 실행시킬 수 있다.</strong> 그렇기 때문에 비동기적으로 아주 아주 빠르게 눈 깜짝할 새 동안 CPU 코어는 쓰레드를 한번씩 실행시킨다. A 쓰레드 잠깐 일시켰다가 중간에 B 쓰레드로 옮겨가서 일하고 이런 식으로 일한다. <u>그래서 마치 병렬적으로 동시에 실행되는 것처럼 보이게 된다.</u> 컴퓨터에서 동시에 여러 프로그램이 병렬적으로 실행되고 있는 것 같지만 사실 그런 것처럼 CPU 가 왔다갔다 이 쓰레드 저 쓰레드 옮겨 다니면서 일을 하고 있는 것이다.</p>
+
+<ul>
+  <li>운영체제 모드
+    <ul>
+      <li>1️⃣ 유저 영역 : 운영 체제에서 유저가 사용하는 영역</li>
+      <li>2️⃣ 커널 모드 : 운영 체제의 핵심적인 영역. <u>스케줄링을 담당한다. 다음 프로그램 어떤거 실행시킬지, 어떤 쓰레드를 실행해야 할지.</u> 정해놓은 기준으로 우선순위 부여.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>멀티 코어는 CPU 코어가 여러개인 환경을 말한다. 때문에 코어 수에 맞게 여러 쓰레드들을 진짜로 동시에! 병렬적으로! 실행시킬 수 있다.</strong> 근데 쓰레드를 늘린다고 성능이 좋아지는건 아니다. 왜냐면 CPU 코어가 A 쓰레드를 사용하다가 B 쓰레드로 옮겨가는 과정의 부하가 크기 때문이다. <u>그래서 딱 한 코어당 한 쓰레드만 실행시키는 것이 가장 이상적이다.</u></p>
+
+<ul>
+  <li>
+    <p>쓰레드 별로 할 일을 부여할 수 있다.</p>
+
+    <ul>
+      <li>게임 로직 담당하는 쓰레드</li>
+      <li>클라이언트 세션 담당하는 쓰레드</li>
+      <li>DB 담당는 쓰레드</li>
+    </ul>
+  </li>
+  <li>
+    <p>쓰레드들은</p>
+    <ul>
+      <li><strong>힙, Data 영역</strong>은 모든 쓰레드들이 <strong>공유</strong>해서 사용한다. (<u>문제 O</u> 얽히고 설킬 수 있음)</li>
+      <li><strong>스택</strong>은 각 쓰레드들마다 고유한 스택을 따로 가진다. (<u>문제 X</u>)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><u>한 쪽을 까먹거나 혹은 한 쪽으로 너무 쏠린다던가 하지 않도록 쓰레드들을 얽히지 않게 효율적으로 관리하는게 관건이다.</u></p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우
+언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+</code></pre></div></div>
+
+<p><a href="#" class="btn btn--primary align-right">맨 위로 이동하기</a></p>]]></content><author><name>여의도 개발자 🧑🏻‍💻</name></author><category term="Toss SLASH" /><category term="Server" /><category term="CSharp" /><category term="Network" /><summary type="html"><![CDATA[인프런에 있는 Rookiss님의 [C#과 유니티로 만드는 MMORPG 게임 개발 시리즈] Part4: 게임 서버 강의를 듣고 정리한 필기입니다. 😀 🌜 강의 들으러 가기 Click]]></summary></entry><entry><title type="html">[MySQL입문] 환경 설정 (Microsoft SQL Server), SSMS 사용법</title><link href="http://localhost:4000/sqlp/ch0/" rel="alternate" type="text/html" title="[MySQL입문] 환경 설정 (Microsoft SQL Server), SSMS 사용법" /><published>2021-01-22T00:00:00+09:00</published><updated>2021-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sqlp/ch0</id><content type="html" xml:base="http://localhost:4000/sqlp/ch0/"><![CDATA[<p class="notice--warning">인프런에 있는 Rookiss님의 <strong>[C#과 유니티로 만드는 MMORPG 게임 개발 시리즈] <u>Part5: 데이터베이스</u></strong> 강의를 듣고 정리한 필기입니다. 😀<br />
+<a href="https://www.inflearn.com/course/유니티-MMORPG-개발-part5">🌜 강의 들으러 가기 Click</a></p>
+
+<h2 id="-rdbms-vs-nosql">🚀 RDBMS vs NOSQL</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">RDBMS</code> ✔
+    <ul>
+      <li>관계형 데이터 베이스</li>
+      <li>MMORPG 게임 제작에 적합
+        <ul>
+          <li>정보들이 제각각 따로 놀면 안되고 관계있는 것 끼리 묶어 저장하는 관계형 DB가 적합</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">NOSQL</code>
+    <ul>
+      <li>비 관계형 데이터 베이스</li>
+      <li>빅테이터에 적합</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="-환경-설정">🚀 환경 설정</h2>
+
+<ul>
+  <li>설치하기
+    <ol>
+      <li>Microsoft SQL Server 2019</li>
+      <li>SSMS</li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="-ssms-입문">🚀 SSMS 입문</h2>
+
+<p><img src="https://user-images.githubusercontent.com/42318591/114130385-6fa2ea00-993b-11eb-8be2-0b8880f7801d.png" alt="image" /></p>
+
+<blockquote>
+  <p>📌 <strong>SQL</strong> 👉 RDMS 를 조작하기 위한 명령어</p>
+</blockquote>
+
+<blockquote>
+  <p>📌 <strong>CRUD</strong> 👉 Create - Read - Update - Delete</p>
+</blockquote>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">새 쿼리</code>를 누르면 SQL문을 작성할 수 있다.</li>
+  <li>왼쪽에 나열 되어있는 하나 하나가 다 테이블이다. (하나의 엑셀 Sheet 와도 같음)</li>
+  <li>원하는 폴더에 우클 - 테이블 - 추가 하면 테이블을 새롭게 생성할 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl + S</code> 로 수정된 테이블을 저장한다.</li>
+  <li>Refresh 새로고침 해주어야 개체 탐색기에 새 테이블 혹은 수정된 테이블이 반영된다.</li>
+  <li>주석은 <code class="language-plaintext highlighter-rouge">/* */</code>와 <code class="language-plaintext highlighter-rouge">--</code> 사용</li>
+</ul>
+
+<p>DB 는 깊게 공부할 필요가 있다. DB 설계를 매우 잘해야 함!! DB 설계 잘못하면 과부하 걸릴 수도 있다. 성능에 큰 영향을 미친다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우
+언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+</code></pre></div></div>
+
+<p><a href="#" class="btn btn--primary align-right">맨 위로 이동하기</a></p>]]></content><author><name>여의도 개발자 🧑🏻‍💻</name></author><category term="SQLP" /><category term="Server" /><category term="SQL" /><category term="DB" /><summary type="html"><![CDATA[인프런에 있는 Rookiss님의 [C#과 유니티로 만드는 MMORPG 게임 개발 시리즈] Part5: 데이터베이스 강의를 듣고 정리한 필기입니다. 😀 🌜 강의 들으러 가기 Click]]></summary></entry><entry><title type="html">ch0. 서버 개요 및 환경 설정</title><link href="http://localhost:4000/system%20design/ch0/" rel="alternate" type="text/html" title="ch0. 서버 개요 및 환경 설정" /><published>2021-01-22T00:00:00+09:00</published><updated>2021-01-22T00:00:00+09:00</updated><id>http://localhost:4000/system%20design/ch0</id><content type="html" xml:base="http://localhost:4000/system%20design/ch0/"><![CDATA[<p class="notice--warning">인프런에 있는 Rookiss님의 <strong>[C#과 유니티로 만드는 MMORPG 게임 개발 시리즈] <u>Part4: 게임 서버</u></strong> 강의를 듣고 정리한 필기입니다. 😀<br />
+<a href="https://www.inflearn.com/course/유니티-MMORPG-개발-Part4">🌜 강의 들으러 가기 Click</a></p>
+
+<h2 id="-서버란">🚀 서버란?</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">서버</code> 👉 다른 컴퓨터에서 연결이 가능하도록 <u>대기 상태로 상시 실행</u> 중인 프로그램</p>
+</blockquote>
+
+<ul>
+  <li>영업 중인 식당과 유사하다.
+    <ul>
+      <li>손님이 올 수 있도록 식당 열고 대기하다가 손님 오면 서비스 제공</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="-서버의-종류">✈ 서버의 종류</h3>
+
+<h4 id="1️⃣-web-server">1️⃣ Web Server</h4>
+
+<blockquote>
+  <p>1️⃣ <u>Web Server</u> <em>ex) HTTP</em></p>
+</blockquote>
+
+<ul>
+  <li><strong>질의/응답 형태</strong>
+    <ul>
+      <li>정보 요청/갱신이 드물다.</li>
+      <li><em>한번만 질의 응담 받고 떠남</em> <u>단순히 한번만 교류</u>
+        <ul>
+          <li>간단한 요청과 그에 대한 응답을 할 때 많이 사용한다.</li>
+          <li>예를 들어 로그인, 랭킹 시스템 불러오기 같은 단발성으로 불러오고 말 것들은 웹서버를 사용하는 것이 좋을 것 같다.</li>
+        </ul>
+      </li>
+      <li>실시간 상호 교류가 필요하지 않다.</li>
+      <li>식당에서 직원이 손님에게 먼저 접근하는 일이 없다.
+        <ul>
+          <li>즉, 서버가 먼저 클라에게 접근하는 일이 없다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>테이크 아웃 식당
+    <ul>
+      <li>손님이 테이크 아웃 해가지고 음식 갖고 떠나면 연락 끊김.
+        <ul>
+          <li>클라가 떠나고나면 클라의 상태를 당분간 잊고 지낸다. (<code class="language-plaintext highlighter-rouge">Stateless</code>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>게임 뿐만 아니라 웹 서비스를 만드는데에도 사용된다.
+    <ul>
+      <li>구글, 아마존, 네이버 등</li>
+    </ul>
+  </li>
+  <li>보통 처음부터 서버를 만드는 경우는 없고 프레임워크(구현되어져 있는 뼈대)를 사용하여 제작한다.
+    <ul>
+      <li>ASP.NET (C#), Spring (Java), Node JS (Javascript), Django(Python), Flask(Python), PHP,..
+        <ul>
+          <li>각 언어마다 자기만의 프레임워크가 있다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="2️⃣-game-server">2️⃣ Game Server</h4>
+
+<blockquote>
+  <p>2️⃣ <u>Game Server</u> <em>ex) TCP, Binary, Stateful</em></p>
+</blockquote>
+
+<ul>
+  <li><strong>실시간 상호작용</strong>
+    <ul>
+      <li>정보 요청/갱신이 많다.
+        <ul>
+          <li>게임 할 때 내가 뭘 움직이면 상대방 컴퓨터에서도 똑같이 내가 움직인게 보여야 하고 등등 계속해서 정보가 갱신되므로 질의응답 횟수가 어마어마하다. 서버는 계~~속 클라들과 실시간으로 교류해야 한다.</li>
+        </ul>
+      </li>
+      <li>실시간 상호 교류가 많이 필요하므로 언제라도 직원(서버)이 손님(클라)한테 접근이 가능해야 한다.</li>
+      <li>손님이 식당에 머무는 동안, <u>직원은 계속 손님의 상태를 확인하면서 최상의 서비스를 제공해야 한다.</u> (<code class="language-plaintext highlighter-rouge">Stateful</code>)</li>
+    </ul>
+  </li>
+  <li>일반 식당
+    <ul>
+      <li>서빙 직원이 와서 손님에게 물어볼 수도 있고 손님이 추가로 주문을 할 수도 있음.</li>
+      <li>즉, 서버-클라 서로 상호적인 교류가 잦음</li>
+    </ul>
+  </li>
+</ul>
+
+<p>게임 서버의 제작에 있어서 웹서버처럼 최적화된 프레임워크가 존재하기가 어렵다. 게임 장르마다 요구 사항이 다양하고 다르기 때문이다. 식당마다 메뉴와 인테리어, 직원 수 등등 전부 다 다르듯이!</p>
+
+<p>손님은 몇 명 받을지는 최대 동시 접속자와 연관지을 수 있겠고, 직원을 총 몇명 돌릴지는 쓰레드가 되겠다. 이렇게 서버와 식당은 많이 유사해서 서버를 식당에 비유하기 적합하다.</p>
+
+<ul>
+  <li>멀티 쓰레드 👉 직원들 고용하고 운영</li>
+  <li>네트워크 👉 직원들이 손님과 어떤 방식으로 대화를 할지</li>
+  <li>DB 👉 결제 및 장부 처리를 어떤 방식으로 할지</li>
+  <li>게임 로직 👉 손님들의 주문을 신속하고 맛있게 요리하는 것</li>
+  <li>서버 구조 👉 위에서 정한 정책에 맞는 식당의 인테리어를 고민하는 것</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="-환경-설정">🚀 환경 설정</h2>
+
+<blockquote>
+  <p>C# <code class="language-plaintext highlighter-rouge">콘솔 앱(.NET Core)</code>으로 프로젝트 생성</p>
+</blockquote>
+
+<ul>
+  <li>프로젝트
+    <ul>
+      <li>📘DummyClient
+        <ul>
+          <li>얘 하나가 다수의 클라이언트 역할을 하도록 할 것</li>
+        </ul>
+      </li>
+      <li>📘Server
+        <ul>
+          <li>나중에 올릴 그 서버</li>
+        </ul>
+      </li>
+      <li>📘ServerCore
+        <ul>
+          <li>서버에 필요한 핵심 기능들</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/42318591/105457536-54c0c200-5cca-11eb-8d8d-dd0017fe6216.png" alt="image" /></p>
+
+<p>솔루션 우클 - 속성 해보면 이렇게 프로젝트들도 동시에 실행시킬 수 있다는 것을 확인할 수 있다. 한 프로젝트만 실행할 경우 시작 프로젝트로 설정해서 하면 되고, 여러 프로젝트를 실행할 경우라면 이렇게 솔루션 속성에 들어와서 실행할 프로젝트들을 동시에 실행하도록 설정해줄 수 있다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우
+언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+</code></pre></div></div>
+
+<p><a href="#" class="btn btn--primary align-right">맨 위로 이동하기</a></p>]]></content><author><name>여의도 개발자 🧑🏻‍💻</name></author><category term="System Design" /><category term="Server" /><category term="CSharp" /><category term="Network" /><summary type="html"><![CDATA[인프런에 있는 Rookiss님의 [C#과 유니티로 만드는 MMORPG 게임 개발 시리즈] Part4: 게임 서버 강의를 듣고 정리한 필기입니다. 😀 🌜 강의 들으러 가기 Click]]></summary></entry><entry><title type="html">Chapter 3. 네트워크의 공통 언어 TCP/IP</title><link href="http://localhost:4000/chat%20with%20c/chapter3-1/" rel="alternate" type="text/html" title="Chapter 3. 네트워크의 공통 언어 TCP/IP" /><published>2020-07-27T00:00:00+09:00</published><updated>2020-07-27T00:00:00+09:00</updated><id>http://localhost:4000/chat%20with%20c/chapter3-1</id><content type="html" xml:base="http://localhost:4000/chat%20with%20c/chapter3-1/"><![CDATA[<p class="notice--warning"><strong>그림으로 배우는 네트워크 원리</strong> 책을 공부하고 정리한 필기입니다. 😀</p>
+
+<h1 id="chapter-3-네트워크의-공통-언어-tcpip">Chapter 3. 네트워크의 공통 언어 TCP/IP</h1>
+
+<h2 id="1-네트워크의-공통-언어">1. 네트워크의 공통 언어</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">프로토콜</code> 👉 네트워크 통신 규칙</li>
+  <li><code class="language-plaintext highlighter-rouge">네트워크 아키텍처</code> 👉 여러 프로토콜을 조합한 것.</li>
+  <li>네트워크 아키텍처(언어)는 여러개가 있지만 지금은 거의 <code class="language-plaintext highlighter-rouge">TCP/IP</code>만 사용한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">호스트</code> 👉 TCP/IP 로 통신하는 PC, 스마트폰 등등 각종 네트워크 기기 전반.</li>
+</ul>
+
+<h3 id="tcpip-계층-구조">TCP/IP 계층 구조</h3>
+
+<ul>
+  <li>OSI 참조 모델 👉 <strong>7 계층</strong>
+    <ul>
+      <li>실무에서 사용되는 일은 없다.</li>
+    </ul>
+  </li>
+  <li><u>TCP/IP</u> 👉 <strong>4 계층</strong>
+    <ul>
+      <li>각 계층에 포함된 프로토콜들을 조합하여 애플리케이션끼리 통신한다.</li>
+      <li>4 개의 계층이 모두 정상적으로 작동해야 통신이 이루어진다.</li>
+      <li><u>기능을 계층화</u>, <u>복수의 프로토콜을 조합</u></li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>최상위 : <strong>애플레이케이션 계층</strong>
+    <ul>
+      <li>애플리케이션에서 다룰 데이터 형식과 절차를 결정
+프로토콜이 통신 상대와 같은 조합이여야 한다.</li>
+      <li>HTTP, DNS, SMTP 등등</li>
+    </ul>
+  </li>
+  <li>상위 : <strong>트랜스포트 계층</strong>
+    <ul>
+      <li>애플리케이션에 데이터를 할당
+프로토콜이 통신 상대와 같은 조합이여야 한다.</li>
+      <li>TCP/UDP</li>
+    </ul>
+  </li>
+  <li>하위 : <strong>인터넷 계층</strong>
+    <ul>
+      <li>end to end 통신을 한다.</li>
+      <li>프로토콜이 통신 상대와 같은 조합이여야 한다.</li>
+      <li>IP, ICMP 등등</li>
+    </ul>
+  </li>
+  <li>최하위 : <strong>네트워크 인터페이스 계층</strong>
+    <ul>
+      <li>프로토콜은 자유롭게 선택할 수 있다.</li>
+      <li>프로토콜이 통신 상대와 같은 것을 사용할 필요는 없다.</li>
+      <li>이더넷, Wi-Fi 등등</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="최하위--네트워크-인터페이스-계층">최하위 👉 네트워크 인터페이스 계층</h2>
+
+<blockquote>
+  <p>같은 네트워크 내의 인터페이스 간에 데이터를 전송하는 역할</p>
+</blockquote>
+
+<ul>
+  <li><em>하나의 네트워크</em> 란 (라우터 + 레이어3 스위치)로 구분되는 범위 혹은 (레이터2 스위치)로 구성하는 범위.</li>
+  <li>디지털 데이터를 전기 신호(물리적 신호)로 변환해 전달한다.</li>
+  <li>프로토콜이 통신 상대와 같은 것을 사용할 필요는 없다.
+    <ul>
+      <li><strong>네트워크 인터페이스</strong> 의 <code class="language-plaintext highlighter-rouge">프로토콜</code>
+        <ul>
+          <li>이더넷(유선), Wi-Fi(무선) 등등</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="하위--인터넷-계층">하위 👉 인터넷 계층</h2>
+
+<blockquote>
+  <p>서로 다른 네트워크 사이끼리 데이터를 전송하는 역할</p>
+</blockquote>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">라우터</code> 👉 네트워크끼리 연결하고 데이터를 전송하는 기기.</li>
+  <li><code class="language-plaintext highlighter-rouge">라우팅</code> 👉 라우터에 의한 네트워크 간 전송</li>
+  <li><code class="language-plaintext highlighter-rouge">엔드 투 엔드 통신</code> 👉 원격지 네트워크에서 최종적인 출발지와 목적지 사이의 데이터 전송</li>
+  <li>프로토콜이 통신 상대와 같아야 한다.
+    <ul>
+      <li><strong>인터넷 계층</strong> 의 <code class="language-plaintext highlighter-rouge">프로토콜</code>
+        <ul>
+          <li>IP 👉 엔드 투 엔드 통신에 사용</li>
+          <li>ICMP, ARP 👉 IP를 도와줌</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="중상위--트랜스포트-계층">중상위 👉 트랜스포트 계층</h2>
+
+<blockquote>
+  <p>여러 애플리케이션에서 다양한 타이밍에 받은 <u>데이터들을 적절한 애플리케이션에 배분</u>한다.</p>
+</blockquote>
+
+<ul>
+  <li>최하층부터 트랜스포트층까지 제대로 동작해야 출발지와 목적지 애플리케이션 간(서버, 클라이언트)에 데이터를 송수신할 수 있게 된다.</li>
+  <li>포함되는 프로토콜 👉 <strong>TCP, UDP</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">TCP</code>의 경우 endtoend의 신뢰성을 확보해준다.
+        <ul>
+          <li>데이터가 유실되더라도 그 사실을 검출해 데이터를 다시 보내준다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="상위--애플리케이션-계층">상위 👉 애플리케이션 계층</h2>
+
+<blockquote>
+  <p>애플리케이션 기능을 실행하기 위한 <u>데이터 형식과 처리 순서등을 결정</u></p>
+</blockquote>
+
+<ul>
+  <li>0,1 디지털 데이터를 문자, 이미지 등 인간이 인식할 수 있는 데이터를 표현</li>
+  <li>포함되는 프로토콜
+    <ul>
+      <li><strong>HTTP</strong> 👉 크롬, 인터넷 익스플로어 등등 웹브라우저</li>
+      <li><strong>SMTP</strong> 👉 전자메일 소프트웨어에 사용</li>
+      <li><strong>DNS</strong> 👉 애플리케이션의 통신을 준비하기 위해 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우
+언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+</code></pre></div></div>
+
+<p><a href="#" class="btn btn--primary align-right">맨 위로 이동하기</a></p>]]></content><author><name>여의도 개발자 🧑🏻‍💻</name></author><category term="Chat with C" /><category term="Computer Science" /><category term="Network" /><summary type="html"><![CDATA[그림으로 배우는 네트워크 원리 책을 공부하고 정리한 필기입니다. 😀]]></summary></entry><entry><title type="html">Chapter 2. 네트워크를 만드는 것</title><link href="http://localhost:4000/chat%20with%20spring/chapter2/" rel="alternate" type="text/html" title="Chapter 2. 네트워크를 만드는 것" /><published>2020-07-14T00:00:00+09:00</published><updated>2020-07-14T00:00:00+09:00</updated><id>http://localhost:4000/chat%20with%20spring/chapter2</id><content type="html" xml:base="http://localhost:4000/chat%20with%20spring/chapter2/"><![CDATA[<p class="notice--warning"><strong>그림으로 배우는 네트워크 원리</strong> 책을 공부하고 정리한 필기입니다. 😀</p>
+
+<h1 id="chapter-2-네트워크를-만드는-것">Chapter 2. 네트워크를 만드는 것</h1>
+
+<h2 id="1-클라우드-아이콘">1. 클라우드 아이콘</h2>
+
+<p>가정 내 네트워크는 집 모양 + 구름 모양 아이콘으로 표현하는 등등, 클라우드 아이콘으로 네트워크 규모를 표현하기도 한다.</p>
+
+<p><br /></p>
+
+<h2 id="2-네트워크를-구성하는-기기">2. 네트워크를 구성하는 기기</h2>
+
+<h3 id="기본적인-기기">기본적인 기기</h3>
+
+<blockquote>
+  <p>자세한건 5,6 챕터에서 다룬다.</p>
+</blockquote>
+
+<ul>
+  <li>데이터를 전송한다.
+    <ol>
+      <li>라우터</li>
+      <li>레이어 2 스위치</li>
+      <li>레이어 3 위치</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="데이터-전송-처리-3-단계">데이터 전송 처리 3 단계</h3>
+
+<ol>
+  <li>데이터 수신</li>
+</ol>
+
+<ul>
+  <li>물리적 신호(전기 신호)로 변환된 데이터를 0, 1로 이루어져 있는 원래 디지털 신호로 되돌린다.</li>
+</ul>
+
+<ol>
+  <li>데이터 보낼 곳을 결정</li>
+</ol>
+
+<ul>
+  <li>수신한 데이터에 부가된 <u>제어 정보</u>를 참조하여 전송할 곳을 결정한다.</li>
+  <li><u>라우터, 레이어 2 스위치, 레이어 3 위치</u></li>
+</ul>
+
+<ol>
+  <li>데이터 전송</li>
+</ol>
+
+<ul>
+  <li>다시 물리적 신호(전기 신호)로 변환해서 내보낸다.</li>
+  <li>제어 정보를 고쳐쓰기도 한다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="3-네트워크의-구체적인-구성">3. 네트워크의 구체적인 구성</h2>
+
+<h3 id="인터페이스">인터페이스</h3>
+
+<blockquote>
+  <p>디지털 데이터는 전기 신호같은 물리적 신호로 변환되어 <u>인터페이스에서 송출되고 링크(유선 케이블 or 무선 전파)를 타고 전달된다.</u></p>
+</blockquote>
+
+<ul>
+  <li>서로 다른 네트워크 <u>기기끼리 연결하기 위해 각각의 기기에 규격화된 인터페이스</u>가 갖추어져 있다.
+    <ul>
+      <li>대표적으로 <code class="language-plaintext highlighter-rouge">이더넷 인터페이스(= 이더넷 포트 = LAN 포트)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">포트</code> 라고도 한다. <strong>인터페이스 = 포트</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="4-네트워크-만들기">4. 네트워크 만들기</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">LAN</code>을 구축하는 주요 기술 (챕터 5에서 자세히 다룸)
+    <ol>
+      <li>이더넷</li>
+      <li>무선 LAN (= Wi-Fi)</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="lan-구축하기">LAN 구축하기</h3>
+
+<ul>
+  <li>유선 LAN
+    <ul>
+      <li>이더넷 인터페이스가 있는 <u>라우터</u>, <u>레이어 2 스위치</u>, <u>레이어 3 스위치</u>가 있어야 한다. 이 기기의 인터페이스를 LAN 케이블로 연결하면 됨.</li>
+    </ul>
+  </li>
+  <li>무선 LAN
+    <ul>
+      <li><u>라우터</u>, <u>레이어 2 스위치</u>, <u>레이어 3 스위치</u>에다가 추가로 <u>무선 LAN 액세스 포인트</u>가 있어야 한다.
+        <ul>
+          <li>무선 신호를 받고 이를 유선으로 연결 된 스위치에 전송</li>
+        </ul>
+      </li>
+      <li>노트북, 스마트폰 등등 이런 기기들은 무선 LAN 인터페이스를 갖추고 있음</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우
+언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+</code></pre></div></div>
+
+<p><a href="#" class="btn btn--primary align-right">맨 위로 이동하기</a></p>]]></content><author><name>여의도 개발자 🧑🏻‍💻</name></author><category term="Chat with Spring" /><category term="Computer Science" /><category term="Network" /><summary type="html"><![CDATA[그림으로 배우는 네트워크 원리 책을 공부하고 정리한 필기입니다. 😀]]></summary></entry><entry><title type="html">Chapter 1. 네트워크의 기본</title><link href="http://localhost:4000/upbit/chapter1/" rel="alternate" type="text/html" title="Chapter 1. 네트워크의 기본" /><published>2020-07-09T00:00:00+09:00</published><updated>2020-07-10T00:00:00+09:00</updated><id>http://localhost:4000/upbit/chapter1</id><content type="html" xml:base="http://localhost:4000/upbit/chapter1/"><![CDATA[<p class="notice--warning"><strong>그림으로 배우는 네트워크 원리</strong> 책을 공부하고 정리한 필기입니다. 😀</p>
+
+<h1 id="chapter-1-네트워크의-기본">Chapter 1. 네트워크의 기본</h1>
+
+<ul>
+  <li>네트워크 전체 상의 이해</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="1-컴퓨터-네트워크">1. 컴퓨터 네트워크</h2>
+
+<ul>
+  <li>컴퓨터 네트워크
+    <ul>
+      <li>컴퓨터끼리 데이터를 주고 받는 시스템</li>
+      <li>네트워크를 통하여 PC나 서버 간에 데이터를 주고 받을 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="2-사설-네트워크와-인터넷">2. 사설 네트워크와 인터넷</h2>
+
+<ul>
+  <li>사설 네트워크
+    <ul>
+      <li>사용자를 직원이나 가족 등으로 제한한다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">인터넷</code>
+    <ul>
+      <li>접속할 사용자를 제한하지 않고 누구든 이용할 수 있는 네트워크</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="3-lan-wan">3. LAN, WAN</h2>
+
+<blockquote>
+  <p>A라는 회사의 사내 네트워크를 예로 들면 각 지사 건물 내부에 있는 네트워크를 <code class="language-plaintext highlighter-rouge">LAN</code>이라 하고 여러 지역에 있는 이 지사들 전체를 하나의 네트워크로 연결해 주는 것을 <code class="language-plaintext highlighter-rouge">WAN</code>이라고 할 수 있다.</p>
+</blockquote>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">LAN</code> : Local Area Network</p>
+</blockquote>
+
+<ul>
+  <li>각 거점 내에 구축된 네트워크.
+    <ul>
+      <li>거점 내부에 있는 <u>PC 등등 기기끼리</u> 서로 연결한다.</li>
+      <li>ex) 유선, 무선LAN 등등</li>
+    </ul>
+  </li>
+  <li>구축과 관리 비용
+    <ul>
+      <li>기기 배치나 배선 등등 사용자가 직접 초기 비용을 들여 구축해야 한다.</li>
+      <li>별도의 통신 요금은 들지 않는다.</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">WAN</code> : Wide Area Network</p>
+</blockquote>
+
+<ul>
+  <li>거점에 있는 <u>LAN들끼리</u> 연결해준다.</li>
+  <li>구축과 관리 비용
+    <ul>
+      <li>통신사에서 구축하고 관리한다.
+        <ul>
+          <li>사용자는 통신사 서비스에 가입 계약 해야함.</li>
+        </ul>
+      </li>
+      <li>사용자는 통신요금, 서비스 계약 요금을 내야한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="4-인터넷">4. 인터넷</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">인터넷</code> : 전세계 다양한 <u>조직이 관리하는 네트워크(AS : Autonomous System)</u>들이 연결된 것.</p>
+</blockquote>
+
+<h3 id="isp">ISP</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">ISP</code>(Internet Service Provider) : 인터넷 서비스 제공 사업자로 한국으로는 KT, SK브로드밴드, LG U+ 등이 있다. AS(조직 네트워크)의 구체적인 예가 된다.</p>
+</blockquote>
+
+<ul>
+  <li>인터넷을 사용하기 위해선 <code class="language-plaintext highlighter-rouge">ISP</code>의 인터넷 공급 서비스에 가입을 해야 한다.</li>
+  <li>인터넷 상의 모든 <code class="language-plaintext highlighter-rouge">ISP</code>는 <code class="language-plaintext highlighter-rouge">ISP</code>의 최상위 그룹인 <strong>Tier1</strong>을 경유해서 어딘가에서 다 연결 된다.
+    <ul>
+      <li>따라서 계약한 <code class="language-plaintext highlighter-rouge">ISP</code>가 달라도 통신할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="인터넷-사용하기">인터넷 사용하기</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ISP</code>와 계약한 후
+    <ul>
+      <li>고정 회선
+        <ul>
+          <li>👉 ‘가정 혹은 회사 내의 <u>라우터</u>‘와 ‘<code class="language-plaintext highlighter-rouge">ISP</code>의 <u>라우터</u>’ 연결.</li>
+          <li>전용선, 전화회선, 광케이블, 케이블TV회선</li>
+        </ul>
+      </li>
+      <li>모바일 회선 👉 라우터 없이 바로 ‘<code class="language-plaintext highlighter-rouge">ISP</code>의 <u>라우터</u>’ 연결.
+        <ul>
+          <li>4G, 5G, Wi-Fi, WiMAZ, WiMAX2</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="5-서버---클라이언트">5. 서버 - 클라이언트</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">애플리케이션</code> : 데이터를 주고받는 주체. <u>서버 - 클라이언트</u></p>
+</blockquote>
+
+<ul>
+  <li><u>애플레케이션</u>은 <u>서버 애플레케이션</u>에게 <strong>요청(Request)</strong>을 보내고</li>
+  <li><u>서버 애플레케이션</u>은 <u>애플레케이션</u>에게 <strong>응답(Reply)</strong>을 보낸다.</li>
+</ul>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">피어투피어 어플리케이션</code> : 서버를 거치지 않고 클라이언트끼리 직접 데이터를 주고 받는 애플리케이션. <em>ex) 온라인 게임, SNS 메신저</em></p>
+</blockquote>
+
+<ul>
+  <li>간혹 통신 상대 클라이언트를 지정해주고자 서버가 개입하는 경우도 있긴 하다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="6-네트워크-아키텍처-">6. 네트워크 아키텍처 :</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">프로토콜</code> : 통신에 필요한 규격화된 규칙
+    <ul>
+      <li>언어에 발음 문법 문자표기법 표준어 등이 정해져있듯이 프로토콜도 통신을 위한 규칙이 정해져 있다.</li>
+      <li><em>ex) 주소 형식, 데이터 형식, 통신 절차 등등</em></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">네트워크 아키텍터</code> : 한국어, 영어 같은 컴퓨터끼리 통신하기 위한 컴퓨터 통신상의 언어. <u>수많은 프로토콜(규칙)들의 집합</u>
+    <ul>
+      <li>여러가지 종류가 있긴 하지만 <code class="language-plaintext highlighter-rouge">TCP/IP</code>가 대표적이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="tcpip">TCP/IP</h4>
+
+<blockquote>
+  <p>네트워크 아키텍처의 대표적인 <u>네트워크의 공통 언어</u>.</p>
+</blockquote>
+
+<ul>
+  <li><u>여러 프로토콜들로 조합 된 4 개의 계층</u>을 역할별로 나누어 가지고 있다.
+    <ol>
+      <li>애플리케이션 층
+        <ul>
+          <li>DNS, SMTP, HTTP 등등</li>
+        </ul>
+      </li>
+      <li>트랜스포트 층
+        <ul>
+          <li>TCP/UDP 등등</li>
+        </ul>
+      </li>
+      <li>인터넷 층
+        <ul>
+          <li>IP, ICMP, ARP 등등</li>
+        </ul>
+      </li>
+      <li>네트워크 인터페이스 층
+        <ul>
+          <li>이더넷, 무선 LAN 등등</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="7-서버-운용-및-관리">7. 서버 운용 및 관리</h3>
+
+<ul>
+  <li><strong>서버 운용 관리의 어려움</strong>
+    <ul>
+      <li>어플리케이션이 동작하기 위해선 <u>서버가 항상 가동되야 한다.</u></li>
+      <li>데이터 백업과 보안에 신경써야 한다.</li>
+      <li>서버를 만드려면 서버용 고급 컴퓨터를 사고 이를 어플리케이션과 테스트 해야 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="클라우드-서비스">클라우드 서비스</h4>
+
+<blockquote>
+  <p>서버를 직접 관리(온프레미스)하지 않고 인터넷을 경유하여 클라우드 서비스 회사가 제공하는 서버의 기능을 이용하는 것.</p>
+</blockquote>
+
+<ul>
+  <li>위와 같은 서버 운용 관리를 해결해준다.
+    <ul>
+      <li>직접 서버를 관리 운용할 필요 없이 클라우드 서비스를 통해 서버를 운용하게 됨.
+        <ul>
+          <li>직접 서버를 만들고 운용하는 전통 방식을 ‘온프레미스’ 라고 한다.</li>
+        </ul>
+      </li>
+      <li>서버는 클라우드 서비스 회사(AWS 같은)가 직접 관리, 운용하며 우리는 그 서비스와 계약만 하면 된다.</li>
+      <li>클라우드 서비스 회사가 제공하는 서버를 사용하게 됨.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="8-클라우드-서비스의-종류">8. 클라우드 서비스의 종류</h3>
+
+<blockquote>
+  <p>클라우드 서비스가 제공하는 <u>서버의 어느 부분까지 사용할 수 있는지</u>에 따라 나뉨</p>
+</blockquote>
+
+<ol>
+  <li>IaaS</li>
+</ol>
+
+<ul>
+  <li>서버의 <strong>하드웨어</strong>적인 부분만 제공 되는 클라우드 서비스. <em>ex) CPU, 메모리, 저장장치</em></li>
+  <li>따라서 클라우드 서비스 사용자가 이를 기반으로 위에 OS, 미들웨어, 어플리케이션을 직접 만들어야 해서 좀 더 자유롭게 서버 시스템을 구축할 수 있음</li>
+</ul>
+
+<ol>
+  <li>PaaS</li>
+</ol>
+
+<ul>
+  <li>서버의 OS, DB등등 <strong>플랫폼</strong> 부분까지만 제공 되는 클라우드 서비스.</li>
+  <li>사용자는 독자적인 어플리케이션만 추가해 만들면 된다.</li>
+</ul>
+
+<ol>
+  <li>SaaS</li>
+</ol>
+
+<ul>
+  <li>서버의 특정 <strong>소프트웨어, 어플리케이션 기능들까지</strong> 제공 되는 클라우드 서비스. 가장 많은 것이 제공 된다.</li>
+  <li>개인 사용자가 많이 쓴다. ex 네이버 N드라이브, 구글 드라이브</li>
+</ul>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우
+언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+</code></pre></div></div>
+
+<p><a href="#" class="btn btn--primary align-right">맨 위로 이동하기</a></p>]]></content><author><name>여의도 개발자 🧑🏻‍💻</name></author><category term="Upbit" /><category term="Computer Science" /><category term="Network" /><summary type="html"><![CDATA[그림으로 배우는 네트워크 원리 책을 공부하고 정리한 필기입니다. 😀]]></summary></entry></feed>
