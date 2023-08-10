@@ -11,8 +11,8 @@
         <span class="nav__sub-title">Market</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "FIX Protocol" %}
-                        <li><a href="/categories/fix-protocol" class="">FIX Protocol ({{category[1].size}})</a></li>
+                    {% if category[0] == "FIX" %}
+                        <li><a href="/categories/fix-protocol" class="">FIX ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
