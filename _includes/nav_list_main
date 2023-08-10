@@ -12,14 +12,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "FEP" %}
-                        <li><a href="/categories/blog" class="">FEP ({{category[1].size}})</a></li>
+                        <li><a href="/categories/fep" class="">FEP ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "FIX Protocol" %}
-                        <li><a href="/categories/design-pattern" class="">FIX Protocol ({{category[1].size}})</a></li>
+                        <li><a href="/categories/fix-protocol" class="">FIX Protocol ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -27,21 +27,21 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Upbit" %}
-                        <li><a href="/categories/blog" class=""> Upbit ({{category[1].size}})</a></li>
+                        <li><a href="/categories/upbit" class=""> Upbit ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "KIS Open API" %}
-                        <li><a href="/categories/blog" class=""> KIS Open API ({{category[1].size}})</a></li>
+                        <li><a href="/categories/kis-open-api" class=""> KIS Open API ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "강화학습" %}
-                        <li><a href="/categories/blog" class=""> 강화학습 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/rl-trading" class=""> 강화학습 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -49,14 +49,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Chat with C" %}
-                        <li><a href="/categories/server1" class="">Chat with C ({{category[1].size}})</a></li>
+                        <li><a href="/categories/chat-with-c" class="">Chat with C ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Chat with Spring" %}
-                        <li><a href="/categories/server1" class="">Chat with Spring ({{category[1].size}})</a></li>
+                        <li><a href="/categories/chat-with-spring" class="">Chat with Spring ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -64,21 +64,21 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Toss SLASH" %}
-                        <li><a href="/categories/server1" class="">Toss SLASH ({{category[1].size}})</a></li>
+                        <li><a href="/categories/toss-slash" class="">Toss SLASH ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "System Design" %}
-                        <li><a href="/categories/server1" class="">[책] System Design ({{category[1].size}})</a></li>
+                        <li><a href="/categories/system-design" class="">[책] System Design ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "IT Infra" %}
-                        <li><a href="/categories/db" class="">[책] IT Infra ({{category[1].size}})</a></li>
+                        <li><a href="/categories/it-infra" class="">[책] IT Infra ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul> 
