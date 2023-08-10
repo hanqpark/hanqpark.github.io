@@ -31,21 +31,21 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "KIS Open API" %}
+                        <li><a href="/categories/blog" class=""> KIS Open API ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "강화학습" %}
+                        <li><a href="/categories/blog" class=""> 강화학습 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title">Server</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "System Design" %}
-                        <li><a href="/categories/server1" class="">System Design ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Toss SLASH" %}
-                        <li><a href="/categories/server1" class="">Toss SLASH ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Chat with C" %}
@@ -60,11 +60,25 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-       <span class="nav__sub-title">Database</span>
+       <span class="nav__sub-title">Review</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "SQLP" %}
-                        <li><a href="/categories/db" class="">SQLP ({{category[1].size}})</a></li>
+                    {% if category[0] == "Toss SLASH" %}
+                        <li><a href="/categories/server1" class="">Toss SLASH ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "System Design" %}
+                        <li><a href="/categories/server1" class="">가상 면접 사례로 배우는 대규모 시스템 설계 기초 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "IT Infra" %}
+                        <li><a href="/categories/db" class="">그림으로 공부하는 IT 인프라 구조 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul> 
