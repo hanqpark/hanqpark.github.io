@@ -71,14 +71,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "System Design" %}
-                        <li><a href="/categories/server1" class="">가상 면접 사례로 배우는 대규모 시스템 설계 기초 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/server1" class="">[책] System Design ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "IT Infra" %}
-                        <li><a href="/categories/db" class="">그림으로 공부하는 IT 인프라 구조 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/db" class="">[책] IT Infra ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul> 
