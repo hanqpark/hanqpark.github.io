@@ -11,15 +11,22 @@
         <span class="nav__sub-title">Market</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "FEP" %}
-                        <li><a href="/categories/fep" class="">FEP ({{category[1].size}})</a></li>
+                    {% if category[0] == "FIX Protocol" %}
+                        <li><a href="/categories/fix-protocol" class="">FIX Protocol ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "FIX Protocol" %}
-                        <li><a href="/categories/fix-protocol" class="">FIX Protocol ({{category[1].size}})</a></li>
+                    {% if category[0] == "ATS" %}
+                        <li><a href="/categories/ats" class="">ATS ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "STO" %}
+                        <li><a href="/categories/sto" class="">STO ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -27,21 +34,21 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Upbit" %}
-                        <li><a href="/categories/upbit" class=""> Upbit ({{category[1].size}})</a></li>
+                        <li><a href="/categories/upbit" class="">Upbit ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "KIS Open API" %}
-                        <li><a href="/categories/kis-open-api" class=""> KIS Open API ({{category[1].size}})</a></li>
+                        <li><a href="/categories/kis-open-api" class="">KIS Open API ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "강화학습" %}
-                        <li><a href="/categories/rl-trading" class=""> 강화학습 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/rl-trading" class="">강화학습 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -60,7 +67,22 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-       <span class="nav__sub-title">Review</span>
+        <span class="nav__sub-title">Book</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "IT Infra" %}
+                        <li><a href="/categories/it-infra" class="">IT Infra ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul> 
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "System Design" %}
+                        <li><a href="/categories/system-design" class="">System Design ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">Tech</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Toss SLASH" %}
@@ -68,20 +90,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "System Design" %}
-                        <li><a href="/categories/system-design" class="">[책] System Design ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "IT Infra" %}
-                        <li><a href="/categories/it-infra" class="">[책] IT Infra ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul> 
       </li>
       {% comment %} <li>	
             <br>      
