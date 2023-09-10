@@ -1,7 +1,7 @@
 ---
-title: "System Design"
+title: "ATS"
 layout: archive
-permalink: categories/system-design
+permalink: categories/fix
 author_profile: true
 sidebar_main: true
 ---
@@ -10,5 +10,5 @@ sidebar_main: true
 
 ---
 
-{% assign posts = site.categories["System Design"] %}
+{% assign posts = site.categories.ATS %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

@@ -1,5 +1,5 @@
 ---
-title: "채팅시스템 with Spring Boot"
+title: "채팅시스템 with C"
 layout: archive
 permalink: categories/chat-system
 author_profile: true
@@ -10,5 +10,5 @@ sidebar_main: true
 
 ---
 
-{% assign posts = site.categories.Chat %}
+{% assign posts = site.categories.['Chat with C'] %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

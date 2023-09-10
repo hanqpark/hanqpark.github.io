@@ -11,8 +11,15 @@
         <span class="nav__sub-title">Market</span>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "FEP" %}
+                        <li><a href="/categories/fix" class="">FEP ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "FIX" %}
-                        <li><a href="/categories/fix-protocol" class="">FIX ({{category[1].size}})</a></li>
+                        <li><a href="/categories/fix" class="">FIX ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -20,13 +27,6 @@
                 {% for category in site.categories %}
                     {% if category[0] == "ATS" %}
                         <li><a href="/categories/ats" class="">ATS ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "STO" %}
-                        <li><a href="/categories/sto" class="">STO ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -64,21 +64,6 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Chat with Spring" %}
                         <li><a href="/categories/chat-with-spring" class="">Chat with Spring ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        <span class="nav__sub-title">Book</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "IT Infra" %}
-                        <li><a href="/categories/it-infra" class="">IT Infra ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul> 
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "System Design" %}
-                        <li><a href="/categories/system-design" class="">System Design ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
