@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "dark" # "default"  "air", "aqua", "contrast", , "dir
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "🏝️ 돈쟁이 섬에서의 개발자 표류기" 
+title                    : "IT로 읽어주는 자본시장 이야기" 
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "인수은"
-description              : "🏝️ 돈쟁이 섬에서의 개발자 표류기"
+description              : "IT로 읽어주는 자본시장 이야기"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "hanqpark/hanqpark.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -75,7 +75,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  "/assets/images/my-cat.jpg" # Open Graph/Twitter default site image
+og_image                 :  "/assets/images/avatar.jpeg" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -93,9 +93,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "여의도 개발자 🧑🏻‍💻"
+  name             : "인수은 🧑🏻‍💻"
   avatar           : "/assets/images/avatar.jpeg"
-  bio              : "자본시장, 그리고 IT."
+  bio              : "개발자의 여의도 표류기"
   location         : "Seoul, Korea"
   links:
     - label: "Email"
