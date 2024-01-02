@@ -1,14 +1,15 @@
 {% assign sum = site.posts | size %}
 
 <nav class="nav__list">
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
-  <ul class="nav__items" id="category_tag_menu">
-      <li>
+    <input id="ac-toc" name="accordion-toc" type="checkbox" />
+    <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+    <ul class="nav__items" id="category_tag_menu">
+        <li>
             📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
-      </li>
-      <li>
-        <span class="nav__sub-title">Market</span>
+        </li>
+        
+        <li>
+            <span class="nav__sub-title">Market</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "FEP" %}
@@ -30,56 +31,28 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">Trading</span>
+
+            <span class="nav__sub-title">Server</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Upbit" %}
-                        <li><a href="/categories/upbit" class="">Upbit ({{category[1].size}})</a></li>
+                    {% if category[0] == "Spring Boot" %}
+                        <li><a href="/categories/spring-boot" class="">Spring Boot ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "KIS Open API" %}
-                        <li><a href="/categories/kis-open-api" class="">KIS Open API ({{category[1].size}})</a></li>
+                    {% if category[0] == "JPA" %}
+                        <li><a href="/categories/jpa" class="">JPA ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "강화학습" %}
-                        <li><a href="/categories/rl-trading" class="">강화학습 ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        <span class="nav__sub-title">Server</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Chat with C" %}
-                        <li><a href="/categories/chat-with-c" class="">Chat with C ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Chat with Spring" %}
-                        <li><a href="/categories/chat-with-spring" class="">Chat with Spring ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        <span class="nav__sub-title">Tech</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Toss SLASH" %}
-                        <li><a href="/categories/toss-slash" class="">Toss SLASH ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-      </li>
-      {% comment %} <li>	
+        </li>
+        
+        <li>	
             <br>      
             <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fansohxxn.github.io&count_bg=%23FFCC35&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false">
-      </li> {% endcomment %}
-  </ul>
+        </li>
+    </ul>
 </nav>
 

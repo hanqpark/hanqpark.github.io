@@ -1,7 +1,7 @@
 ---
-title: "채팅시스템 with C"
+title: "Spring Boot"
 layout: archive
-permalink: categories/chat-system
+permalink: categories/spring-boot
 author_profile: true
 sidebar_main: true
 ---
@@ -10,5 +10,5 @@ sidebar_main: true
 
 ---
 
-{% assign posts = site.categories.['Chat with C'] %}
+{% assign posts = site.categories.['Spring Boot'] %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
