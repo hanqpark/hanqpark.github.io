@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "dark" # "default"  "air", "aqua", "contrast", , "dir
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "개발자의 여의도 표류기" 
+title                    : "개발자의 여의도 표류기 🏝️" 
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "인수은"
-description              : "개발자의 여의도 표류기" 
+description              : "개발자의 여의도 표류기 🏝️" 
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "hanqpark/hanqpark.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
