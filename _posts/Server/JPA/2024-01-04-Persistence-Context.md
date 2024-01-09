@@ -21,7 +21,7 @@ last_modified_at: 2024-01-07
 
 1. **영속성 컨텍스트**: Persistence Context
 2. **엔티티 매핑**: 객체와 관계형 DB를 매핑하는 것, Obejct Relational Mapping (ORM)
-   - [[JPA 기초] 03. 엔티티 매핑](https://hanqpark.github.io/jpa/Entity-Mapping/)에 정리해두었습니다.
+   - [[JPA 기초] 03. 엔티티 매핑](https://hanqpark.github.io/jpa/entity-mapping/)에 정리해두었습니다.
 
 # 영속성 컨텍스트
 

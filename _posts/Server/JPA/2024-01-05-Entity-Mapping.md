@@ -47,7 +47,7 @@ public class Member {
 3. **기본 키 매핑**: `@Id`, `@GeneratedValue`
    - Member 객체의 `private Long id` 항목과 Member 테이블의 `pk`를 매핑한다.
 4. **연관관계 매핑**: `@ManyToOne`, `@OneToMany`, `@JoinColumn`
-   - [[JPA 기초] 04. 연관관계 매핑](https://hanqpark.github.io/jpa/Association-Mapping/)에 정리했습니다.
+   - [[JPA 기초] 04. 연관관계 매핑](https://hanqpark.github.io/jpa/association-mapping/)에 정리했습니다.
 
 ## 1. 객체와 테이블 매핑
 
