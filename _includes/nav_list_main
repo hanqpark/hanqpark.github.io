@@ -7,7 +7,37 @@
         <li>
             📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
         </li>
-        
+
+        <span class="nav__sub-title">C++</span>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "Algorithm" %}
+                    <li><a href="/categories/algorithm" class="">Algorithm ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "JPA" %}
+                    <li><a href="/categories/jpa" class="">JPA ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <span class="nav__sub-title">Server</span>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "Spring Boot" %}
+                    <li><a href="/categories/spring-boot" class="">Spring Boot ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "JPA" %}
+                    <li><a href="/categories/jpa" class="">JPA ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
         <li>
             <span class="nav__sub-title">Market</span>
             <ul>
@@ -21,29 +51,6 @@
                 {% for category in site.categories %}
                     {% if category[0] == "FIX" %}
                         <li><a href="/categories/fix" class="">FIX ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "ATS" %}
-                        <li><a href="/categories/ats" class="">ATS ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
-            <span class="nav__sub-title">Server</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Spring Boot" %}
-                        <li><a href="/categories/spring-boot" class="">Spring Boot ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "JPA" %}
-                        <li><a href="/categories/jpa" class="">JPA ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
