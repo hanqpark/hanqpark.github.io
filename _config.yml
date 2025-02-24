@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "인수은 🧑🏻‍💻"
   avatar           : "/assets/images/avatar.jpeg"
-  bio              : "증권사 대외계 개발자입니다"
+  bio              : "HFT system에 관심이 있는 여의도 개발자입니다. high-performance, low-latency와 관련된 C++, 알고리즘 및 시스템 최적화 방법에 대해 기록하고자 합니다."
   location         : "Seoul, Korea"
   links:
     - label: "Email"
