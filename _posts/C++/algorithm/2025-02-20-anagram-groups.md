@@ -87,15 +87,15 @@ private:
 | 최종 복사 (`push_back` vs `move`) | **O(N)**         | **O(N)**              |
 | **총 시간복잡도**                 | **O(N K log K)** | **O(N K)**            |
 
-## **`unordered_map` 사용**
+## 1. **`unordered_map` 사용**
 
 - key, value 자료구조를 사용할 때는 map보다는 unordered_map을 사용하도록 하자. 탐색 속도가 훨씬 많이 개선된다.
 
-## `sort()`의 시간복잡도 고려
+## 2. `sort()`의 시간복잡도 고려
 
 - `std::sort()`는 O(N log N)의 시간복잡도를 가지므로, 더 빠른 정렬 방법이 있으면 그것을 사용하거나 구현하는 것이 좋다.
 
-## **`reserve()`로 벡터 성능 최적화**
+## 3. **`reserve()`로 벡터 성능 최적화**
 
 - counting sort로 시간복잡도 최적화 하였다.
   입력값이 apple이라면,
@@ -106,7 +106,7 @@ private:
 - `key.reserve(52);`
   key의 최대 길이는 26 \* 2 = 52 이므로 미리 공간을 확보하여 동적 할당을 줄인다.
 
-## **`move(value)` 사용**
+## 4. **`move(value)` 사용**
 
 - `answer.push_back(move(value));`
   - vector<string>을 복사하지 않고 **이동(move)하여 불필요한 메모리 복사를 방지한다.**
