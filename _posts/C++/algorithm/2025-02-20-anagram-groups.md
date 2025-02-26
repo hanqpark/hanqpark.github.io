@@ -4,7 +4,7 @@ title: "[NeetCode] Anagram Groups"
 categories:
   - Algorithm
 tags:
-  - [C++, Array & Hash]
+  - [C++, Arrays & Hashing]
 
 toc: true
 toc_sticky: true

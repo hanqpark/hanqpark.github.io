@@ -4,7 +4,7 @@ title: "[NeetCode] Top K Frequent Elements"
 categories:
   - Algorithm
 tags:
-  - [C++, Array & Hash]
+  - [C++, Arrays & Hashing]
 
 toc: true
 toc_sticky: true
@@ -182,7 +182,7 @@ int main() {
 
 ### **3. 사용자 정의 타입과 함께 사용**
 
-priority_queue는 **사용자 정의 타입**을 저장할 수 있다. 이때, 우선순위를 어떻게 비교할지를 정의해줘야 한다. 예를 들어, **사람의 나이**를 기준으로 우선순위를 정하고 싶다면 다음과 같이 할 수 있다:
+priority_queue는 **사용자 정의 타입**을 저장할 수 있다. 이때, 우선순위를 어떻게 비교할지를 정의해줘야 한다. 예를 들어, **사람의 나이**를 기준으로 우선순위를 정하고 싶다면 다음과 같이 할 수 있다
 
 ```cpp
 #include <iostream>
