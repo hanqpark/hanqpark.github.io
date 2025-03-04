@@ -10,7 +10,7 @@ toc: true
 toc_sticky: true
 
 date: 2025-03-03
-last_modified_at: 2025-03-03
+last_modified_at: 2025-03-04
 ---
 
 # 링크
@@ -85,21 +85,21 @@ public:
 
 ## 현재 코드의 시간 복잡도
 
-### encode 함수: **$O(n + m)$**
+### encode 함수: **O(n + m)**
 
 - 주어진 `vector<string>& strs`를 순회하며 answer 문자열에 각 문자열을 추가하고 "-"를 붙인다.
 - strs의 원소 개수를 n, 모든 문자열의 총 길이를 m이라 하면
-  1. `answer += str` 수행 시 문자열이 계속 증가하면서 재할당이 발생 → **$O(m)$**
-  2. `answer += "-"` 역시 같은 이유로 **$O(n)$**
+  1. `answer += str` 수행 시 문자열이 계속 증가하면서 재할당이 발생 → **O(m)**
+  2. `answer += "-"` 역시 같은 이유로 **O(n)**
 
-### **decode 함수: $O(m)$**
+### **decode 함수: O(m)**
 
 - `stringstream ss(s)`를 이용해 "-" 기준으로 문자열을 나눈다.
 - 입력 문자열의 길이를 m이라 하면
-  1. `getline(ss, str, '-')`는 문자열을 탐색하면서 분할 → **$O(m)$**
-  2. 벡터에 `push_back(str)` → **$O(n)$** (최대 n개의 원소)
+  1. `getline(ss, str, '-')`는 문자열을 탐색하면서 분할 → **O(m)**
+  2. 벡터에 `push_back(str)` → **O(n)** (최대 n개의 원소)
 
-**최종적으로 전체 코드의 시간 복잡도는 $O(n + m)$** 이다.
+**최종적으로 전체 코드의 시간 복잡도는 O(n + m)** 이다.
 
 ## 최적화 방법
 
